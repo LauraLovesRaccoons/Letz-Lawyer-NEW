@@ -1,0 +1,6 @@
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306                # 3308 for docker
+DB_DATABASE=flower_shop     # db name   (Changed here)
+DB_USERNAME=root            # db user
+DB_PASSWORD=                # db password
