@@ -61,6 +61,10 @@
                     <option value="30">Transportation Law</option>
                     <option value="31">Agriculture Law</option>
                     <option value="32">Corporate Lawyer</option>
+                    <option value="33">Mergers and Acquisitions Lawyer</option>
+                    <option value="34">Finance Lawyer</option>
+                    <option value="35">Securities Lawyer</option>
+                    <option value="36">Banking Lawyer</option>
                     {{-- 1 is other if someone messes with stuff as well as for stuff that isn't listed here --}}
                     <option value="1">Other</option>
                     {{-- not selected is an empty entry will be handled below --}}
