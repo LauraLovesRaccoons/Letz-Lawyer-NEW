@@ -3,6 +3,7 @@
 
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
+use App\Models\Specialty; // Corrected use statement for the Specialty model
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\UserController;
 
@@ -85,6 +86,19 @@ Route::post('/login', [UserController::class, 'authenticate'])->middleware('gues
 Route::get('/external-link', function(){
     $url = request('url');
     return redirect()->away(url($url));
+});
+
+
+Route::get('/landing', function () {
+    $specialties = Category::all(); // Fetch specialties from the database
+
+    return view('UserLandingCatagory.landing', compact('specialties'));
+});
+
+Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
+
+Route::get('/category', function () {
+    return view('category');
 });
 
 // routes/web.php
