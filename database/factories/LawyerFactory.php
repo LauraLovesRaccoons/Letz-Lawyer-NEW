@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Lawyer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lawyer>
  */
 class LawyerFactory extends Factory
 {
@@ -24,6 +25,15 @@ class LawyerFactory extends Factory
             'website' => $this->faker->url(),
             'location'=> $this->faker->city(),
             'description' => $this->faker->paragraphs(5, true),
+    protected $model = Lawyer::class;
+    public function definition(): array
+    {
+        
+
+        return [
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
+            // Add other fields as needed
         ];
     }
 }
