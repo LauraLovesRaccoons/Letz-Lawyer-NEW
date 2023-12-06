@@ -32,7 +32,8 @@
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
             <!-- Our Logo -->
-            <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" />
+            {{-- <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" /> --}}
+            <img class="w-24 logo" src="{{ asset('images/Logo_V0.3.png') }}" alt="LetzLawyer Logo" />
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
@@ -81,4 +82,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
->>>>>>> 589c6bde8159fdda788be90983f6e68870411058

@@ -88,6 +88,19 @@ Route::get('/external-link', function(){
     return redirect()->away(url($url));
 });
 
+
+Route::get('/landing', function () {
+    $specialties = Category::all(); // Fetch specialties from the database
+
+    return view('UserLandingCatagory.landing', compact('specialties'));
+});
+
+Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
+
+Route::get('/category', function () {
+    return view('category');
+});
+
 // routes/web.php
 
 
