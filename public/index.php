@@ -46,10 +46,16 @@ require __DIR__.'/../vendor/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-$kernel = $app->make(Kernel::class);
+// Get an instance of the HTTP kernel
+$kernel = app()->make(Kernel::class);
 
+// Handle the request
 $response = $kernel->handle(
     $request = Request::capture()
-)->send();
+);
 
+// Send the response
+$response->send();
+
+// Terminate the request
 $kernel->terminate($request, $response);
