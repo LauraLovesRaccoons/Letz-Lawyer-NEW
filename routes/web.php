@@ -87,3 +87,8 @@ Route::get('/external-link', function(){
     return redirect()->away(url($url));
 });
 
+// routes/web.php
+
+
+
+Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
