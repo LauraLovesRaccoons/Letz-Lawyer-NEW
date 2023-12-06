@@ -32,7 +32,8 @@
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
             <!-- Our Logo -->
-            <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" />
+            {{-- <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" /> --}}
+            <img class="w-24 logo" src="{{ asset('images/Logo_V0.3.png') }}" alt="LetzLawyer Logo" />
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
