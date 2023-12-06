@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
 use App\Models\Lawyer;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,16 +15,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory(10)->create();
+        // Seed Users
+        User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-           'name' => 'Test User',
-             'email' => 'test@example.com',
-             'password'=> bcrypt('password'),
-         ]);
-         
-         Lawyer::factory(5)->create([
-            'user_id' => $user->id
+        // Seed a specific user
+        $user = User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => bcrypt('password'),
         ]);
+
+        // Seed Lawyers associated with the user
+        Lawyer::factory(5)->create([
+            'user_id' => $user->id,
+        ]);
+
+        // Seed Categories
+        Category::factory(5)->create();
+
+        // Seed Posts associated with categories
+        Post::factory(10)->create([
+            'category_id' => function () {
+                return Category::factory()->create()->id;
+            },
+        ]);
+
+        
     }
 }

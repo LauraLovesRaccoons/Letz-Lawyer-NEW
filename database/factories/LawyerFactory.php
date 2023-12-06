@@ -1,11 +1,11 @@
 <?php
-
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Lawyer as Model;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Model>
  */
 class LawyerFactory extends Factory
 {
@@ -16,9 +16,11 @@ class LawyerFactory extends Factory
      */
     public function definition(): array
     {
+        $tags = ['Family', 'Criminal', 'Corporate'];
+
         return [
-            'title' => $this->faker->name(),
-            'tags' => 'Family,Criminal,Corporate',
+            'name' => $this->faker->name(),
+            'tags' => implode(',', $tags),
             'company' => $this->faker->company(),
             'email' => $this->faker->companyEmail(),
             'website' => $this->faker->url(),
@@ -27,3 +29,4 @@ class LawyerFactory extends Factory
         ];
     }
 }
+
