@@ -4,7 +4,7 @@
     <div style="margin-left:700px;">
         <div style="border: solid 2px black;width:100px;">
           <h2>Lawyer name :{{-- {{ $lawyer->name }} --}}</h2>
-          <p>Email: {{-- {{ $lawyer->email }}< --}}/p>
+          <p>Email: {{-- {{ $lawyer->email }}< --}}</p>
           <p>Phone:{{--  {{ $lawyer->phone }} --}}</p>
         </div>
         <br>

@@ -3,8 +3,9 @@
 
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\AppointmentController;
 
 
 /*
