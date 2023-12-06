@@ -11,10 +11,14 @@ use App\Models\Lawyer as Model;
  */
 class LawyerFactory extends Factory
 {
+
+    protected $model = Lawyer::class;
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
+     * 
+     
      */
     public function definition(): array
     {
@@ -28,16 +32,11 @@ class LawyerFactory extends Factory
             'website' => $this->faker->url(),
             'location'=> $this->faker->city(),
             'description' => $this->faker->paragraphs(5, true),
-    protected $model = Lawyer::class;
-    public function definition(): array
-    {
-        
-
-        return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            // Add other fields as needed
         ];
+
+    
     }
+    
+   
 }
 
