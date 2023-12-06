@@ -11,7 +11,6 @@ use App\Models\Lawyer as Model;
  */
 class LawyerFactory extends Factory
 {
-
     protected $model = Lawyer::class;
     /**
      * Define the model's default state.
@@ -37,6 +36,6 @@ class LawyerFactory extends Factory
     
     }
     
-   
+  
 }
 
