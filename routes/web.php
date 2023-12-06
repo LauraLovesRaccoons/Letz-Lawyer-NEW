@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Specialty; // Corrected use statement for the Specialty model
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/landing', function () {
+    $specialties = Category::all(); // Fetch specialties from the database
+
+    return view('UserLandingCatagory.landing', compact('specialties'));
+});
+
+Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
+
+Route::get('/category', function () {
+    return view('category');
 });
