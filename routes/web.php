@@ -5,6 +5,10 @@ use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use App\Http\Controllers\YourController;
+// use Google\Service\ToolResults\SplashScreenController ;
+// this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 
 
 /*
@@ -29,7 +33,7 @@ use App\Http\Controllers\UserController;
 
 //*Appointment Routes
 //All appointments
-Route::get('/', [AppointmentController::class, 'create']);
+Route::get('/register', [UserController::class, 'create']);
 
 //Single Appointment fetched by id in the url
 Route::get('/appointments/{id}',[appointmentController::class, 'show'])
@@ -64,6 +68,10 @@ Route::get('/appointments/manage', [AppointmentController::class, 'manage'])->mi
 //Show register form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
+//first registration page
+// Route::get('/users/register', [UserController::class, 'create'])->middleware('guest'); 
+
+
 //Add user to database
 Route::post('/users',[UserController::class, 'store'])->middleware('guest');
 
@@ -77,7 +85,7 @@ Route::get('/login', [UserController::class, 'login'])
     ->middleware('guest');
 
 //log user in
-Route::post('/login', [UserController::class, 'authenticate'])->middleware('guest');
+Route::post('/users/login', [UserController::class, 'authenticate'])->middleware('guest');
 
 
 
@@ -92,3 +100,9 @@ Route::get('/external-link', function(){
 
 
 Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
+
+
+
+// this Route will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
+
+Route::get('/SplashScreen', [User::class, 'SplashScreen']);

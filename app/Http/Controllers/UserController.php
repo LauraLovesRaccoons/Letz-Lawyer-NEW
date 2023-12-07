@@ -6,12 +6,18 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+// add new 
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Password;
+
+
 class UserController extends Controller
 {
     public function create()
     {
         return view('users.register');
     }
+   
 
     //Add user to database
     public function store(Request $request)
@@ -34,7 +40,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and logged in Successfully!');
+        return redirect('/')->with('message', 'User logged out Successfully!');
         
     }
 

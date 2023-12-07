@@ -72,7 +72,7 @@
         @yield('content')
     </main>
 
-    <x-flash-message />
+    
 
     <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
         <p class="ml-2">Copyright &copy; 2023, All Rights reserved - LetzLawyer</p>
@@ -81,4 +81,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
->>>>>>> 589c6bde8159fdda788be90983f6e68870411058
+
