@@ -62,7 +62,7 @@
 <body>
     <div class="logo-container" >
         {{-- add logo path here --}}
-        <img src="{{ asset('_logo/Logo_V0.3.png') }}"  id="logo">
+        <img src="{{ asset('images/Logo_V0.3.png') }}"  id="logo">
 
 
         <div class="buttons-container" id="buttonsContainer">
