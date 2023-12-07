@@ -67,7 +67,7 @@
 
         <div class="buttons-container" id="buttonsContainer">
             <button class="button" onclick="goToPage('Clients.html')">Clients</button>
-            <button class="button" onclick="goToPage('Lowers.html')">Lawyers</button>
+            <button class="button" onclick="goToPage('Lawyers.html')">Lawyers</button>
         </div>
     </div>
 

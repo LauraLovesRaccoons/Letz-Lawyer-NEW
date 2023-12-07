@@ -1,6 +1,6 @@
 {{-- lawyers.search.blade.php --}}
 
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
     <h1>Search Results</h1>

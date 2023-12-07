@@ -25,7 +25,7 @@ class LawyerController extends Controller
 
     public function create()
     {
-        return view('lawyers.create');
+        return view('lawyers.create_lawyer_data');
     }
 
     public function store(Request $request)
@@ -64,26 +64,25 @@ class LawyerController extends Controller
         ]);
     }
     public function search(Request $request)
-{
-    $categories = Category::all();
-    $selectedCategory = $request->input('category');
-    $searchName = $request->input('name');
+    {
+        $categories = Category::all();
+        $selectedCategory = $request->input('category');
+        $searchName = $request->input('name');
 
-    $query = Lawyer::query();
+        $query = Lawyer::query();
 
-    if ($selectedCategory) {
-        $query->whereHas('categories', function ($query) use ($selectedCategory) {
-            $query->where('id', $selectedCategory);
-        });
+        if ($selectedCategory) {
+            $query->whereHas('categories', function ($query) use ($selectedCategory) {
+                $query->where('id', $selectedCategory);
+            });
+        }
+
+        if ($searchName) {
+            $query->where('name', 'like', "%$searchName%");
+        }
+
+        $lawyers = $query->get();
+
+        return view('lawyers.search', compact('lawyers', 'categories', 'selectedCategory', 'searchName'));
     }
-
-    if ($searchName) {
-        $query->where('name', 'like', "%$searchName%");
-    }
-
-    $lawyers = $query->get();
-
-    return view('lawyers.search', compact('lawyers', 'categories', 'selectedCategory', 'searchName'));
 }
-}
-

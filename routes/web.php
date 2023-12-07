@@ -1,13 +1,16 @@
 <?php
 
 
+use App\Models\User;
+use App\Models\Category;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Models\User;
-use App\Http\Controllers\YourController;
 // use Google\Service\ToolResults\SplashScreenController ;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
+use App\Http\Controllers\YourController;
+use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\SplashScreenController;
 
 
@@ -33,10 +36,12 @@ use App\Http\Controllers\SplashScreenController;
 
 //*Appointment Routes
 //All appointments
-Route::get('/register', [UserController::class, 'create']);
+
+Route::get('/', [SplashScreenController::class, 'firstPage']);
+Route::get('users/register', [UserController::class, 'register']);
 
 //Single Appointment fetched by id in the url
-Route::get('/appointments/{id}',[appointmentController::class, 'show'])
+Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
     ->where('id', '[0-9]+');
 
 //show create form
@@ -52,7 +57,7 @@ Route::get('/appointments/{id}/edit',[AppointmentController::class, 'edit'])
     ->middleware('auth');
 
 //Update Appointment
-Route::put('/appointments/{id}', [AppointmentController::class, 'update'])
+Route::put('/appointments/{id}/update', [AppointmentController::class, 'update'])
     ->where('id', '[0-9]+')
     ->middleware('auth');
 
@@ -66,7 +71,7 @@ Route::get('/appointments/manage', [AppointmentController::class, 'manage'])->mi
 //*Using the User controller now
 
 //Show register form
-Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+Route::get('users/register/create', [UserController::class, 'create'])->middleware('guest');
 
 //first registration page
 // Route::get('/users/register', [UserController::class, 'create'])->middleware('guest'); 
@@ -112,12 +117,12 @@ Route::get('/category', function () {
 
 
 
-Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
+Route::get('/lawyers/search', [LawyerController::class, 'lawyers.search']);
 
 
 
 // this Route will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 
-Route::get('/SplashScreen', [SplashScreenController::class, 'firstPage']);
+Route::get('users/SplashScreen', [SplashScreenController::class, 'firstPage']);
 
 
