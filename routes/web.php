@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Http\Controllers\YourController;
 // use Google\Service\ToolResults\SplashScreenController ;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
+use App\Http\Controllers\SplashScreenController;
 
 
 /*
@@ -105,4 +106,6 @@ Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyer
 
 // this Route will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 
-Route::get('/SplashScreen', [User::class, 'SplashScreen']);
+Route::get('/SplashScreen', [SplashScreenController::class, 'firstPage']);
+
+

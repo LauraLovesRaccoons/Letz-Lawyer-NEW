@@ -1,5 +1,4 @@
-
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
 
@@ -61,8 +60,11 @@
     <title>Splash Screen</title>
 </head>
 <body>
-    <div class="logo-container" onclick="toggleButtons()">
-        <img src="pic/Firefly_mate_i_need_a_logo_for_a_lawyer_appointement_app_in_luxembourg_keep_it_simple_stupid_and_16b(2).jpg" alt="Logo" id="logo">
+    <div class="logo-container" >
+        {{-- add logo path here --}}
+        <img src="{{ asset('_logo/Logo_V0.3.png') }}"  id="logo">
+
+
         <div class="buttons-container" id="buttonsContainer">
             <button class="button" onclick="goToPage('Clients.html')">Clients</button>
             <button class="button" onclick="goToPage('Lowers.html')">Lawyers</button>
