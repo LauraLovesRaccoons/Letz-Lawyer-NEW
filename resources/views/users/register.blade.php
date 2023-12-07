@@ -14,17 +14,17 @@
         @endif
     
     
-        @if(section()->has('error'))
+        @if(session()->has('error'))
          <div class="alert alert-danger">{{session('error')}}> </div>
         @endif
 
-        @if(section()->has('success'))
+        @if(session()->has('success'))
         <div class="alert alert-success">{{session('success')}}> </div>
        @endif
     </div>
 
 
-        <form  action="{{route('registration.post')}}" method="POST" class="ms-auto me-auto mt-3-auto" style="width:500px">
+        <form  action="{{route('register.post')}}" method="POST" class="ms-auto me-auto mt-3-auto" style="width:500px">
 
           @csrf
             <div class="mb-3">

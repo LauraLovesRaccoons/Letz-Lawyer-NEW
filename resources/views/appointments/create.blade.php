@@ -10,7 +10,7 @@
         <br>
         <br>
         
-        <!-- Add more details as needed -->
+        {{-- <!-- Add more details as needed --> --}}
 
         <div class="flex items-center justify-center py-8 px-4">
           <div class="max-w-sm w-full shadow-lg">
@@ -253,7 +253,7 @@
           </div>
           <br>
           <br>
-          <button type="submit">Take an Appointment</button>
+
       </div>
   
 

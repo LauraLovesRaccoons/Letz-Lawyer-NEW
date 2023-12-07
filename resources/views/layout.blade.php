@@ -34,6 +34,8 @@
             <!-- Our Logo -->
             {{-- <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" /> --}}
             <img class="w-24 logo" src="{{ asset('images/Logo_V0.3.png') }}" alt="LetzLawyer Logo" />
+            {{-- i comment this so the Splashscreen will be clear --}}
+            {{-- <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" /> --}}
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
@@ -44,7 +46,7 @@
                 </li>
                 <li>
                     <a href="/appointments/manage">
-                        <i class="fa-solid fa-gear"></i>Manage post
+                        <i class="fa-solid fa-gear"></i>Manage appointments
                     </a>
                 </li>
                 <li>
@@ -55,15 +57,19 @@
                         </button>
                     </form>
                 </li>
-                @else
-                <li>
+                {{-- @else --}}
+
+                 {{-- i comment this so the Splashscreen will be clear --}}
+                {{-- <li>
                     <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i>
                         Register</a>
-                </li>
-                <li>
+                </li> --}}
+
+                 {{-- i comment this so the Splashscreen will be clear --}}
+                {{-- <li>
                     <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a>
-                </li>
+                </li> --}}
             @endauth
         </ul>
     </nav>
@@ -73,6 +79,7 @@
         @yield('content')
     </main>
 
+    
 
     <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
         <p class="ml-2">Copyright &copy; 2023, All Rights reserved - LetzLawyer</p>
