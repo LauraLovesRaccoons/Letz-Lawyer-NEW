@@ -1,14 +1,18 @@
 @extends('layout')
 
 @section('content')
-    <h2>Welcome to the Landing Page</h2>
+
+<div style="padding: 100px;">
+    <h2 class="text-3xl">Welcome to the Landing Page</h2>
+    <br>
 
     <form method="POST" action="{{ route('lawyer.search.submit') }}">
         @csrf
         <div>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter name">
+            <input type="text" id="name" name="name" placeholder="Enter lawyer's name" class="border border-gray-300 rounded-md p-2">
         </div>
+        <br>
 
         <div class="mb-6">
             <label for="specialty" class="inline-block text-lg mb-2">Select Specialties</label>
@@ -58,10 +62,12 @@
 
         <div>
             <label for="location">Location:</label>
-            <input type="text" id="location" name="location" placeholder="Enter location">
+            <input type="text" id="location" name="location" placeholder="Enter location" class="border border-gray-300 rounded-md p-2">
         </div>
-
+        <br>
         <input type="hidden" name="redirect_url" value="{{ route('category') }}">
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Find your Lawyer</button>
     </form>
+
+</div>
 @endsection
