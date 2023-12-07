@@ -12,7 +12,7 @@
 
         <div class="mb-6">
             <label for="specialty" class="inline-block text-lg mb-2">Select Specialties</label>
-            <select class="border border-gray-200 rounded p-2 w-full" name="specialty" multiple size="12">
+            <select class="border border-gray-200 rounded p-2 w-full" name="specialty" >
                 <option value="" selected disabled hidden>Select up to 12 specialties</option>
                 <option value="2">Family Law</option>
                 <option value="3">Criminal Law</option>
