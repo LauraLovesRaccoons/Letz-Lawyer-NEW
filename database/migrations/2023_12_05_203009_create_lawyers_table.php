@@ -9,19 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
+    public function up()
+{
+    if (!Schema::hasTable('lawyers')) {
         Schema::create('lawyers', function (Blueprint $table) {
-            $table->id();
+            // Your table schema here
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
             $table->string('location');
             $table->string('speciality');
-            // Add other relevant fields
             $table->timestamps();
         });
-        
     }
+}
+
 
     /**
      * Reverse the migrations.
