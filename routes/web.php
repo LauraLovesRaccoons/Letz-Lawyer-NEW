@@ -47,6 +47,8 @@ Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
 //show create form
 //Added middleware to prevent access to create form if not logged in
 Route::get('/appointments/create', [ AppointmentController::class, 'create']);
+Route::get('/appointments/confirm', [ AppointmentController::class, 'confirm']);
+
 
 //Add Appointment to database
 Route::post('/appointments', [AppointmentController::class, 'store'])->middleware('auth');

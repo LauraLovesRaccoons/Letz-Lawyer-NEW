@@ -32,6 +32,11 @@ class AppointmentController extends Controller
     {
         return view('appointments.create');
     }
+    public function confirm()
+    {
+        return view('appointments.confirm');
+    }
+
 
     /**
      * Store a newly created resource in storage.
