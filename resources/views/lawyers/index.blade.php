@@ -1,3 +1,6 @@
+@extends('Layout')
+@section('title','login')
+@section('content')
 <form action="{{ route('lawyers.search') }}" method="GET">
     <label for="category">Category:</label>
     <select name="category" id="category">
@@ -12,3 +15,5 @@
 
     <button type="submit">Search</button>
 </form>
+@endsection
+@endsection

@@ -5,10 +5,12 @@ use App\Models\Category;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AppointmentController;
 use App\Models\Specialty; // Corrected use statement for the Specialty model
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 
 /*
@@ -104,11 +106,21 @@ Route::get('/category', function () {
 
 Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
 
-Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
-
-
-// routes/web.php
+Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.lawyers.search');
 
 
 
-Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
+
+
+//Lawyers controlers
+
+
+Route::get('/lawyers', [LawyerController::class, 'index'])->name('lawyers.index');
+Route::get('/lawyers/{lawyer}', [LawyerController::class, 'show'])->name('lawyers.show');
+Route::get('/lawyers/create', [LawyerController::class, 'create'])->name('lawyers.create');
+Route::post('/lawyers', [LawyerController::class, 'store'])->name('lawyers.store');
+Route::get('/lawyers/{lawyer}/edit', [LawyerController::class, 'edit'])->name('lawyers.edit');
+Route::put('/lawyers/{lawyer}', [LawyerController::class, 'update'])->name('lawyers.update');
+Route::delete('/lawyers/{lawyer}', [LawyerController::class, 'destroy'])->name('lawyers.destroy');
+Route::get('/lawyers/manage', [LawyerController::class, 'manage'])->name('lawyers.manage');
+Route::post('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
