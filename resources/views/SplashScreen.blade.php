@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
             background: #f0f0f0; /* Background color for the shadow */
-            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url({{ asset('_logo/Logo_V0.3.png') }}) ;
+            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url({{ asset('images/Logo_V0.3.png') }}) ;
             background-position: center;
             background-size: cover;
             position: relative;
