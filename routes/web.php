@@ -9,8 +9,8 @@ use App\Http\Controllers\UserController;
 // use Google\Service\ToolResults\SplashScreenController ;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 use App\Http\Controllers\YourController;
-use App\Http\Controllers\LawyerController;
-use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Register2Controller;
 use App\Http\Controllers\SplashScreenController;
 
 
@@ -39,6 +39,8 @@ use App\Http\Controllers\SplashScreenController;
 
 Route::get('/', [SplashScreenController::class, 'firstPage']);
 Route::get('users/register', [UserController::class, 'register']);
+
+Route::get('/', [r::class, 'create']);
 
 //Single Appointment fetched by id in the url
 Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
@@ -125,6 +127,15 @@ Route::get('/lawyers/search', [LawyerController::class, 'lawyers.search']);
 
 // this Route will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 
-Route::get('users/SplashScreen', [SplashScreenController::class, 'firstPage']);
+Route::get('/', [SplashScreenController::class, 'firstPage']);
+
+// Route::get('/users/register', [RegisterController::class, 'register']);
+
+Route::get('/splashScreen', [SplashScreenController::class, 'firstPage'])->name('splashScreen');
 
 
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+
+
+
+Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2');

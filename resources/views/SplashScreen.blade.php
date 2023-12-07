@@ -28,7 +28,7 @@
             text-align: center; /* Center the logo and buttons */
         }
 
-        .logo-container img {
+        .logo-container{
             width: 550px; /* Adjust the size of your logo */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
             border-radius: 50%; /* Make the image round */
@@ -62,12 +62,17 @@
 <body>
     <div class="logo-container" >
         {{-- add logo path here --}}
-        <img src="{{ asset('images/Logo_V0.3.png') }}"  id="logo">
+        {{-- <img url() > --}}
+        <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo"  id="logo">
 
 
+
+        <a href="{{ route('register') }}">Go to Register Page</a>
+
+        
         <div class="buttons-container" id="buttonsContainer">
-            <button class="button" onclick="goToPage('Clients.html')">Clients</button>
-            <button class="button" onclick="goToPage('Lawyers.html')">Lawyers</button>
+            <button class="button" onclick="goToPage('users.register')">Clients</button>
+            <button class="button" onclick="goToPage('users.register')">Lawyers</button>
         </div>
     </div>
 
