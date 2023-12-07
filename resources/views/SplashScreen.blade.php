@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
             background: #f0f0f0; /* Background color for the shadow */
-            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url(pic/Firefly_mate_i_need_a_logo_for_a_lawyer_appointement_app_in_luxembourg_keep_it_simple_stupid_and_16b\(2\).jpg) ;
+            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url({{ asset('_logo/Logo_V0.3.png') }}) ;
             background-position: center;
             background-size: cover;
             position: relative;
