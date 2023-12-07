@@ -1,13 +1,16 @@
 <?php
 
 
+use App\Models\User;
+use App\Models\Category;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Models\User;
-use App\Http\Controllers\YourController;
 // use Google\Service\ToolResults\SplashScreenController ;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
+use App\Http\Controllers\YourController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Register2Controller;
 use App\Http\Controllers\SplashScreenController;
 
 
@@ -34,6 +37,8 @@ use App\Http\Controllers\SplashScreenController;
 //*Appointment Routes
 //All appointments
 Route::get('/register', [UserController::class, 'create']);
+
+Route::get('/', [r::class, 'create']);
 
 //Single Appointment fetched by id in the url
 Route::get('/appointments/{id}',[appointmentController::class, 'show'])
@@ -118,6 +123,15 @@ Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyer
 
 // this Route will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 
-Route::get('/SplashScreen', [SplashScreenController::class, 'firstPage']);
+Route::get('/', [SplashScreenController::class, 'firstPage']);
+
+// Route::get('/users/register', [RegisterController::class, 'register']);
+
+Route::get('/splashScreen', [SplashScreenController::class, 'firstPage'])->name('splashScreen');
 
 
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+
+
+
+Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2');

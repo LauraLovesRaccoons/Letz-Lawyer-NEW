@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
             background: #f0f0f0; /* Background color for the shadow */
-            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url(pic/Firefly_mate_i_need_a_logo_for_a_lawyer_appointement_app_in_luxembourg_keep_it_simple_stupid_and_16b\(2\).jpg) ;
+            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url(Logo_V0) ;
             background-position: center;
             background-size: cover;
             position: relative;
@@ -28,7 +28,7 @@
             text-align: center; /* Center the logo and buttons */
         }
 
-        .logo-container img {
+        .logo-container{
             width: 550px; /* Adjust the size of your logo */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
             border-radius: 50%; /* Make the image round */
@@ -62,12 +62,17 @@
 <body>
     <div class="logo-container" >
         {{-- add logo path here --}}
-        <img src="{{ asset('_logo/Logo_V0.3.png') }}"  id="logo">
+        {{-- <img url() > --}}
+        <img src="{{ asset('images/Logo_V0.3.png') }}" alt=""  id="logo">
 
 
+
+        <a href="{{ route('register') }}">Go to Register Page</a>
+
+        
         <div class="buttons-container" id="buttonsContainer">
-            <button class="button" onclick="goToPage('Clients.html')">Clients</button>
-            <button class="button" onclick="goToPage('Lowers.html')">Lawyers</button>
+            <button class="button" onclick="goToPage('users.register')">Clients</button>
+            <button class="button" onclick="goToPage('users.register')">Lawyers</button>
         </div>
     </div>
 
