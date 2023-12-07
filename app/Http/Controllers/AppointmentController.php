@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controller;
+namespace App\Http\Controllers;
+
 
 
 use App\Models\Appointment;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
+
+
 
 class AppointmentController extends Controller
 {

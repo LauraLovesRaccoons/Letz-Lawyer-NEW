@@ -1,11 +1,14 @@
 <?php
 
 
+use App\Models\Category;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
-use App\Models\Specialty; // Corrected use statement for the Specialty model
-use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AppointmentController;
+use App\Models\Specialty; // Corrected use statement for the Specialty model
 
 
 /*
@@ -88,18 +91,21 @@ Route::get('/external-link', function(){
     return redirect()->away(url($url));
 });
 
+//vic part
 
-Route::get('/landing', function () {
-    $specialties = Category::all(); // Fetch specialties from the database
+//end of vic part
+Route::get('/landing', [LandingController::class, 'showLandingPage'])->name('landing');
+Route::post('/submit-search', [LandingController::class, 'submitSearch'])->name('lawyer.search.submit');
 
-    return view('UserLandingCatagory.landing', compact('specialties'));
-});
+// The category route is already defined above. Remove the duplicate definition below.
+Route::get('/category', function () {
+    return view('category');
+})->name('category');
 
 Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
 
-Route::get('/category', function () {
-    return view('category');
-});
+Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.search');
+
 
 // routes/web.php
 

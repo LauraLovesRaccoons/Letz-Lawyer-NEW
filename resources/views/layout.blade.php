@@ -43,8 +43,8 @@
                     </span>
                 </li>
                 <li>
-                    <a href="/gigs/manage">
-                        <i class="fa-solid fa-gear"></i>Manage Gigs
+                    <a href="/appointments/manage">
+                        <i class="fa-solid fa-gear"></i>Manage appointments
                     </a>
                 </li>
                 <li>

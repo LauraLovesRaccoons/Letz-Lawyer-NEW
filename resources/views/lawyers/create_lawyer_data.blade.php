@@ -73,7 +73,7 @@
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
 
-                @php
+                {{-- @php
                     // ! Why 13? because this ensure everyone has a 0 for a no specialty search
                     // This uses the Laravel count function and this php script makes it so that if less than 12 (13 technically) specialties are selected, it will fill the remaining entries with 0 instead of NULL for the db because data integrity mate
                     // Get the number of selected specialties
@@ -85,7 +85,7 @@
                     for ($i = 1; $i <= $remainingEntries; $i++) {
                         $request->merge(['specialty' => ['0']]);
                     }
-                @endphp
+                @endphp --}}
             </div>
 
 

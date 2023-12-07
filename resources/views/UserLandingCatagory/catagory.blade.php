@@ -1,30 +1,27 @@
-<!-- resources/views/UserLandingCatagory/landing.blade.php -->
-
-@extends('layouts.app') <!-- Assuming you have a layout file for your app -->
+@extends('layout')
 
 @section('content')
-    <h2>Welcome to the Landing Page</h2>
+    <h2>Welcome to the Category Page</h2>
 
-    <form method="POST" action="{{ route('lawyer.search.submit') }}">
-        @csrf
+    <div>
+        <!-- Your content related to the selected category goes here -->
+        <!-- This section will display information about the selected category -->
+
+        @if ($category)
+            <h3>Selected Category:</h3>
+            <p>Name: {{ $category->name }}</p>
+            <p>Description: {{ $category->description }}</p>
+            <!-- Add any other category-related details you want to display -->
+        @else
+            <p>No category selected.</p>
+        @endif
+
+        <!-- Example content (replace this with your actual category-specific content) -->
+        <!-- You can add more specific details or customize this section based on the selected category -->
         <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter name">
+            <h3>Category-Specific Details</h3>
+            <!-- Add content related to the selected category here -->
+            <!-- For instance, list posts or lawyers related to this category -->
         </div>
-        <div>
-            <label for="specialty">Specialty:</label>
-            <select id="specialty" name="specialty">
-                <option value="">Select Specialty</option>
-                @foreach($specialties as $specialty)
-                    <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" placeholder="Enter location">
-        </div>
-        <input type="hidden" name="redirect_url" value="{{ route('category') }}">
-        <button type="submit">Search</button>
-    </form>
+    </div>
 @endsection

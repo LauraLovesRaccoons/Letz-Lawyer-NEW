@@ -16,6 +16,8 @@ class LawyerFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = Lawyer::class;
+
     public function definition(): array
     {
         $tags = ['Family', 'Criminal', 'Corporate'];
@@ -27,17 +29,10 @@ class LawyerFactory extends Factory
             'email' => $this->faker->companyEmail(),
             'website' => $this->faker->url(),
             'location'=> $this->faker->city(),
-            'description' => $this->faker->paragraphs(5, true),
-    protected $model = Lawyer::class;
-    public function definition(): array
-    {
-        
-
-        return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            // Add other fields as needed
+            'description' => $this->faker->paragraphs(5, true)
         ];
     }
+  
+ 
 }
 
