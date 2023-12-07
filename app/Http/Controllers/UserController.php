@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\Rules\Password;
 
 // add new 
 use Illuminate\Validation\Rule;
@@ -15,7 +17,12 @@ class UserController extends Controller
 {
     public function create()
     {
-        return view('users.register');
+        return view('UserLandingCatagory.lawyersSearch');
+    }
+
+    public function landing()
+    {
+        return view('UserLandingCatagory.landing');
     }
    
 

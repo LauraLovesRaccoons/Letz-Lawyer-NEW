@@ -19,6 +19,8 @@ class LawyerFactory extends Factory
      * 
      
      */
+    protected $model = Lawyer::class;
+
     public function definition(): array
     {
         $tags = ['Family', 'Criminal', 'Corporate'];
@@ -30,12 +32,14 @@ class LawyerFactory extends Factory
             'email' => $this->faker->companyEmail(),
             'website' => $this->faker->url(),
             'location'=> $this->faker->city(),
-            'description' => $this->faker->paragraphs(5, true),
+            'description' => $this->faker->paragraphs(5, true)
         ];
 
     
     }
     
   
+  
+ 
 }
 

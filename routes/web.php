@@ -100,20 +100,20 @@ Route::get('/external-link', function(){
     return redirect()->away(url($url));
 });
 
+//vic part
 
-Route::get('/landing', function () {
-    $specialties = Category::all(); // Fetch specialties from the database
+//end of vic part
+Route::get('/landing', [LandingController::class, 'showLandingPage'])->name('landing');
+Route::post('/submit-search', [LandingController::class, 'submitSearch'])->name('lawyer.search.submit');
 
-    return view('UserLandingCatagory.landing', compact('specialties'));
-});
+// The category route is already defined above. Remove the duplicate definition below.
+Route::get('/category', function () {
+    return view('category');
+})->name('category');
 
 Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
 
-Route::get('/category', function () {
-    return view('category');
-});
-
-// routes/web.php
+Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.lawyers.search');
 
 
 
