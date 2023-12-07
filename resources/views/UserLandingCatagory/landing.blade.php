@@ -12,7 +12,7 @@
 
         <div class="mb-6">
             <label for="specialty" class="inline-block text-lg mb-2">Select Specialties</label>
-            <select class="border border-gray-200 rounded p-2 w-full" name="specialty" >
+            <select class="border border-gray-200 rounded p-2 w-full" name="specialty">
                 <option value="" selected disabled hidden>Select specialty</option>
                 <option value="2">Family Law</option>
                 <option value="3">Criminal Law</option>
@@ -62,6 +62,6 @@
         </div>
 
         <input type="hidden" name="redirect_url" value="{{ route('category') }}">
-        <button type="submit">Find</button>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Find your Lawyer</button>
     </form>
 @endsection
