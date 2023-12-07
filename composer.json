@@ -25,13 +25,40 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ]
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/",
+            "Classmap\\":[
+                "vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList2.php",
+                "vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter2.php",
+                "vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter2.php",
+                "vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter2.php",
+                "vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/FieldFactory2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/MonthField2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/AbstractField2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/FieldInterface2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/HoursField2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/DayOfMonthField2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/FieldFactoryInterface2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/DayOfWeekField2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/CronExpression2.php",
+                "vendor/dragonmantank/cron-expression/src/Cron/MinutesField2.php",
+                "vendor/brick/math/src/Internal/Calculator/NativeCalculator2.php",
+                "vendor/brick/math/src/Internal/Calculator/BcMathCalculator2.php",
+                "vendor/brick/math/src/Internal/Calculator/GmpCalculator2.php",
+                "vendor/brick/math/src/Internal/Calculator2.php",
+                "vendor/brick/math/src/Exception/MathException2.php",
+                "vendor/brick/math/src/Exception/DivisionByZeroException2.php",
+                "vendor/brick/math/src/Exception/RoundingNecessaryException2.php",
+                "vendor/brick/math/src/Exception/IntegerOverflowException2.php",
+                "vendor/brick/math/src/Exception/NegativeNumberException2.php",
+                "vendor/brick/math/src/Exception/NumberFormatException2.php"
+            ]
+            
+        }
     },
+
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
@@ -66,6 +93,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

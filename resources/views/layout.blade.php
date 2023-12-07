@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="images/favicon.ico" />
-    {{--      this is for flatpickr       --}}
+    {{--      this is for flatpickr  / calendar      --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     {{---------------------------------------------------}}
@@ -35,7 +35,7 @@
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
             <!-- Our Logo -->
-            <img class="w-24 logo" src="{{ asset('images/logo.svg') }}" alt="LetzLawyer Logo" />
+            <img class="w-24 logo" style="border-radius: 50px;" src="{{ asset('images/Logo_V0.3.png') }}" alt="LetzLawyer Logo" />
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
