@@ -105,4 +105,9 @@ class LawyerController extends Controller
 
         return view('lawyers.search', compact('lawyers', 'categories', 'selectedCategory', 'searchName'));
     }
+
+    public function testcreatelawyer()
+    {
+        return view('lawyers.create_lawyer_data');
+    }
 }
