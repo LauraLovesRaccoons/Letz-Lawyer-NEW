@@ -9,8 +9,11 @@ use App\Http\Controllers\UserController;
 // use Google\Service\ToolResults\SplashScreenController ;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 use App\Http\Controllers\YourController;
+use App\Http\Controllers\LawyerController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Register2Controller;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\SplashScreenController;
 
 
@@ -37,10 +40,28 @@ use App\Http\Controllers\SplashScreenController;
 //*Appointment Routes
 //All appointments
 
-Route::get('/', [SplashScreenController::class, 'firstPage']);
-Route::get('users/register', [UserController::class, 'register']);
 
-Route::get('/', [r::class, 'create']);
+//routers for registration 
+Route::get('/', [SplashScreenController::class, 'firstPage'])->name('home');
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+Route::post('/register', [UserController::class, 'store'])->middleware('guest');
+
+Route::get('/register2', [LawyerController::class, 'create'])->middleware('guest');
+Route::post('/register2', [LawyerController::class, 'store'])->middleware('guest');
+
+
+Route::get('/login_user', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login_user', [UserController::class, 'authenticate'])->middleware('guest');
+
+
+Route::get('/login', [LawyerController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LawyerController::class, 'authenticate'])->middleware('guest');
+
+//Route::get('/register', [RegisterController::class, 'register'])->name('register');
+
+//Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2');
+
+//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 //Single Appointment fetched by id in the url
 Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
@@ -134,8 +155,4 @@ Route::get('/', [SplashScreenController::class, 'firstPage']);
 Route::get('/splashScreen', [SplashScreenController::class, 'firstPage'])->name('splashScreen');
 
 
-Route::get('/register', [RegisterController::class, 'register'])->name('register');
 
-
-
-Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2');

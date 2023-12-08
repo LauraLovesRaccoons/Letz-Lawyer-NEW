@@ -6,19 +6,28 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\Rules\Password;
+
 
 // add new 
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Password;
+
+
+use Illuminate\Validation\Rules\Password;
 
 
 class UserController extends Controller
 {
-    public function create()
+   public function create()
+    {
+        return view('register');
+    }
+    public function search()
     {
         return view('UserLandingCatagory.lawyersSearch');
     }
+   // public function register()
+   // {
+   //       return view('register');
+   // }
 
     public function landing()
     {
@@ -66,7 +75,7 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('users.login');
+        return view('login_user');
     }
 
     public function authenticate(Request $request)

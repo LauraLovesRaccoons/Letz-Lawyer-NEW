@@ -23,14 +23,34 @@ class LawyerController extends Controller
         return view('lawyers.show', compact('lawyer'));
     }
 
-    public function create()
+    public function viewPage()
     {
         return view('lawyers.create_lawyer_data');
     }
 
+    public function create()
+    {
+        return view('register2');
+    }
+   // public function register2()
+   // {
+  //      return view('register2');
+   // }
+
     public function store(Request $request)
     {
-        // Validation and saving logic
+        $formFields = $request->validate([
+            'name' => 'required',
+            
+            'company' => ['required'],
+            'location' => 'required',
+            'website' => ['required','url'],
+            'logo' => [ 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required',
+        ]);
+
     }
 
     public function edit(Lawyer $lawyer)

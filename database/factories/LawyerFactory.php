@@ -19,7 +19,7 @@ class LawyerFactory extends Factory
      * 
      
      */
-    protected $model = Lawyer::class;
+    
 
     public function definition(): array
     {

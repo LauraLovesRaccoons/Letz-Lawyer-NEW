@@ -153,40 +153,63 @@
     <button class="btn-back" onclick="goBack()"><i class="fas fa-arrow-left-long"></i> Go Back</button>
 
     <h1 id="title">Sign Up</h1>
-    <form>
-        <div class="input-group">
-            <div class="input-field" id="nameField">
-                <!-- adding an Icons from fontawesome -->
-                <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Name">
-            </div>
-
-            <div class="input-field" id="emailField">
-                <!-- adding an Icons from fontawesome -->
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Email">
-            </div>
-
-            <div class="input-field" id="passwordField">
-                <!-- adding an Icons from fontawesome -->
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Password">
-            </div>
-
-            <div class="input-field" id="confirmPasswordField">
-                <!-- adding an Icons from fontawesome -->
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Confirm Password">
-            </div>
-
-            <!-- maybe we can add this sentence  line 155 -->
-            <!-- <p> Lost password <a href="#"> Click Here !</a></p> -->
+    <form action="/register2" method="POST">
+        @csrf
+        <div class="mb-6">
+            <label for="name" class="inline-block text-lg mb-2">
+                Name
+            </label>
+            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="name"
+                value="{{ old('name') }}" />
+            @error('name')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
         </div>
-        <div class="btn-field">
-            <button type="button" id="signupBtn">Sign Up</button>
-            <button type="button" id="signinBtn" class="disable">Sign In</button>
+
+        <div class="mb-6">
+            <label for="email" class="inline-block text-lg mb-2">Email</label>
+            <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email"
+                value="{{ old('email') }}" />
+            @error('email')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label for="password" class="inline-block text-lg mb-2">
+                Password
+            </label>
+            <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password"
+                value="{{ old('password') }}" />
+            @error('password')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label for="password_confirmation" class="inline-block text-lg mb-2">
+                Confirm Password
+            </label>
+            <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password_confirmation" />
+            @error('password_confirmation')
+                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+                Sign Up
+            </button>
+        </div>
+
+        <div class="mt-8">
+            <p>
+                Already have an account?
+                <a href="/login" class="text-laravel">Login</a>
+            </p>
         </div>
     </form>
+
 </div>
 
 <script>

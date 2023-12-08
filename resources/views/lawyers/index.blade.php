@@ -14,6 +14,10 @@
     <input type="text" name="name" id="name">
 
     <button type="submit">Search</button>
+
+    @include('login')
+    @include('register')
+    @include('register2')
 </form>
 @endsection
 @endsection
