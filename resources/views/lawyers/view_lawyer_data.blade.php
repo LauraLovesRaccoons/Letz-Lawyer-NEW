@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+    <div style="padding: 20px;"> {{-- padding --}}
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">This is your Lawyer Profile</h2>
         </header>
@@ -45,7 +45,7 @@
         {{-- website - can be NULL in db --}}
         <div class="mb-6">
             <label for="url" class="inline-block text-lg mb-2">Website URL</label>
-            <input type='url' value='{{ $lawyer->url ?? "You have no website" }}'   {{-- ?? means if empty display that 'string' --}}
+            <input type='url' value='{{ $lawyer->url ?? 'You have no website' }}' {{-- ?? means if empty display that 'string' --}}
                 class="border border-gray-200 rounded p-2 w-full" disabled />
         </div>
 
@@ -69,5 +69,5 @@
             </form>
 
 
-
-@endsection
+        </div> {{-- padding --}}
+    @endsection
