@@ -7,13 +7,13 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Illuminate\Routing\Controller as BaseController;
 
 
 
 
 
-class AppointmentController extends Controller
+class AppointmentController extends BaseController
 {
     
 
@@ -35,6 +35,10 @@ class AppointmentController extends Controller
     public function confirm()
     {
         return view('appointments.confirm');
+    }
+    public function manage()
+    {
+        return view('appointments.manage');
     }
 
 
@@ -69,6 +73,7 @@ class AppointmentController extends Controller
     {
         //
     }
+
 
     /**
      * Remove the specified resource from storage.

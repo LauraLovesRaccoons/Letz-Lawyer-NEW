@@ -7,7 +7,58 @@
     {{---------------------------------------------------}}
     <br>
     <br>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4" style="margin-left:233px">
+
+<!-- sidebar.blade.php -->
+
+<div class="bg-white h-screen w-96 fixed top-0 left-0 flex flex-col items-center p-16 shadow-md" style="display: flex;flex-direction:column;">
+    <!-- Avatar Icon (replace with your own) -->
+    <img src="https://thispersondoesnotexist.com/" alt="Avatar" class="w-40 h-40 rounded-full mb-4">
+    <br>
+
+        <!-- Sidebar Links -->
+    <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-2xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Dashboard</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Clients</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Lawyers</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">MyProfile</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Settings</a>
+            </div>
+            
+        </div>
+        <br>
+        <form method="POST" action="{{-- route('logout') --}}">
+            @csrf
+            <button type="submit"  style="padding:11px;color:rgb(231, 66, 66);border-radius:20px;" class="text-gray-800 hover:text-gray-600">
+                Logout
+            </button>
+        </form>
+    </div>
+
+    
+</div>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4" style="text-align:right;justify-content:center;margin-right:200px">
         <!-- Monday -->
         <div class="col-span-1">
             <p class="font-semibold">Lun.</p>
@@ -47,8 +98,8 @@
 <br>
 <br>
 <br>
-<div id="component" style="display: flex;flex-direction:row;">
-    <div class="flex items-center w-full justify-center" style="display:flex;flex-direction:column;margin-left:300px;width:600px">
+<div id="component" style="display: flex;flex-direction:row; justify-content:center">
+    <div class="flex items-center w-full justify-center" style="text-align:right;display:flex;flex-direction:column;margin-left:400px;width:600px">
 
         <div class="max-w-lg bg-white shadow-xl rounded-lg p-8" style="width:550px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
             <div class="photo-wrapper p-4">
@@ -108,14 +159,29 @@
 
     
     
-    <div class="bg-white shadow-xl rounded-lg py-3" style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;position:relative">
+    <div class="bg-white shadow-xl rounded-lg py-3" style="text-align:right;min-width:600px;border-radius:50px;height:700px;margin-right:300px;display:flex;flex-direction:column;align-items:center;">
         <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-        <dotlottie-player src="https://lottie.host/bb645be0-ad6d-4930-9b31-01d166e870a3/1quFN5fUeg.json" background="transparent" speed="1" style="position:absolute;top:100px;left:150px;width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+        <dotlottie-player src="https://lottie.host/87ecf3c7-46d9-4237-8f55-9acca4299c59/vU7HdT3rjA.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></dotlottie-player>
+        <p style="color: #50AD41; font-size:2em;text-align:center">Successfully Submited</p>
+        <br>      
         <br>
-        <p style="color: #01ABC0; font-size:2em">Appointment Successfully Booked</p>
-        
+        <br>  
+        <p class="px-4 py-2 text-gray-500 font-semibold">Date and Time:    [Date and Time]</p>
+        <p class="px-4 py-2 text-gray-500 font-semibold">myLawyer:       [Amount]</p>
+        <p class="px-4 py-2 text-gray-500 font-semibold">Tag:     [Details]</p>
+        <p class="px-4 py-2 text-gray-500 font-semibold">Location:      [Venue/Address]</p>
+        <p class="px-4 py-2 text-gray-500 font-semibold">Booking Reference:     [Reference Number]</p>
+        <br>
+        <br>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-base text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Edit</a>
+            </div>
+            <div class="text-center my-4">
+                <a class="text-base text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Dashboard</a>
+            </div>
+        </div>
     </div>
 </div>
-
 
 @endsection

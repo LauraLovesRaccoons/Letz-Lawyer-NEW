@@ -91,7 +91,7 @@ Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])
     ->where('id', '[0-9]+')
     ->middleware('auth');
 
-Route::get('/appointments/manage', [AppointmentController::class, 'manage'])->middleware('auth');
+Route::get('/appointments/manage', [AppointmentController::class, 'manage']);
 
 //*Using the User controller now
 

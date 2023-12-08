@@ -7,6 +7,58 @@
     {{---------------------------------------------------}}
     <br>
     <br>
+    
+
+<!-- sidebar.blade.php -->
+
+<div class="bg-white h-screen w-96 fixed top-0 left-0 flex flex-col items-center p-16 shadow-md" style="display: flex;flex-direction:column;">
+    <!-- Avatar Icon (replace with your own) -->
+    <img src="https://thispersondoesnotexist.com/" alt="Avatar" class="w-40 h-40 rounded-full mb-4">
+    <br>
+
+        <!-- Sidebar Links -->
+    <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-2xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Dashboard</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Clients</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Lawyers</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">MyProfile</a>
+            </div>
+            
+        </div>
+        <div style="display:flex;flex-direction: row ; gap:77px">
+            <div class="text-center my-4">
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Settings</a>
+            </div>
+            
+        </div>
+        <br>
+        <form method="POST" action="{{-- route('logout') --}}">
+            @csrf
+            <button type="submit"  style="padding:11px;color:rgb(231, 66, 66);border-radius:20px;" class="text-gray-800 hover:text-gray-600">
+                Logout
+            </button>
+        </form>
+    </div>
+
+    
+</div>
     <div class="grid grid-cols-1 md:grid-cols-5 gap-4" style="margin-left:233px">
         <!-- Monday -->
         <div class="col-span-1">
@@ -48,7 +100,7 @@
 <br>
 <br>
 <div id="component" style="display: flex;flex-direction:row;">
-    <div class="flex items-center w-full justify-center" style="display:flex;flex-direction:column;margin-left:300px;width:600px">
+    <div class="flex items-center w-full justify-center" style="display:flex;flex-direction:column;margin-left:400px;width:600px">
 
         <div class="max-w-lg bg-white shadow-xl rounded-lg p-8" style="width:550px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
             <div class="photo-wrapper p-4">
@@ -108,7 +160,7 @@
 
     
     
-    <form method="POST" class="bg-white shadow-xl rounded-lg py-3" style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
+    <form method="POST" class="bg-white shadow-xl rounded-lg py-3  " style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
         <div class="relative z-0 w-full mb-5 group">
             <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
             <label for="floating_email" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
@@ -175,5 +227,6 @@
         });
     });
 </script>
+
 
 @endsection
