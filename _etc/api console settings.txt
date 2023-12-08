@@ -1,0 +1,13 @@
+Google recaptcha
+
+reCAPTCHA type:v3
+
+reCAPTCHA keys
+
+SITE KEY = XYZ
+
+SECRET KEY = XYZ
+
+Domains:
+localhost
+127.0.0.1
