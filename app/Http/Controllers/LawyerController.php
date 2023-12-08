@@ -27,6 +27,10 @@ class LawyerController extends Controller
     {
         return view('lawyers.create_lawyer_data');
     }
+    public function register2()
+    {
+        return view('register2');
+    }
 
     public function store(Request $request)
     {

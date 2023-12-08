@@ -6,10 +6,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\Rules\Password;
+
 
 // add new 
-use Illuminate\Validation\Rule;
+
 use Illuminate\Support\Facades\Password;
 
 
@@ -18,6 +18,10 @@ class UserController extends Controller
     public function create()
     {
         return view('UserLandingCatagory.lawyersSearch');
+    }
+    public function register()
+    {
+        return view('register');
     }
 
     public function landing()

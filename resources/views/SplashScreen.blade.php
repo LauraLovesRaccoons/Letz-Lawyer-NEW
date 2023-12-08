@@ -67,12 +67,12 @@
 
 
 
-        <a href="{{ route('register') }}">Go to Register Page</a>
+       {{--<a href="{{ route('register') }}">Go to Register Page</a>--}}
 
         
         <div class="buttons-container" id="buttonsContainer">
-            <button class="button" onclick="goToPage('users.register')">Clients</button>
-            <button class="button" onclick="goToPage('users.register')">Lawyers</button>
+            <button class="button" onclick="goToPage('register')">Clients</button>
+            <button class="button" onclick="goToPage('register2')">Lawyers</button>
         </div>
     </div>
 
