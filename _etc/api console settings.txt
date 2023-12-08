@@ -11,3 +11,8 @@ SECRET KEY = XYZ
 Domains:
 localhost
 127.0.0.1
+
+email is needed!
+
+Verify the origin of reCAPTCHA solutions - MUST BE CHECKED
+
