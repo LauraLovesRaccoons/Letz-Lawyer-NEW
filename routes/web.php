@@ -156,6 +156,6 @@ Route::get('/splashScreen', [SplashScreenController::class, 'firstPage'])->name(
 
 
 
-// test route
-Route::get('/lawyers/test', [LawyerController::class, 'testcreatelawyer']);
+//// // test route
+//// Route::get('/lawyers/test', [LawyerController::class, 'testcreatelawyer']);
 

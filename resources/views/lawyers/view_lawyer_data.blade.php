@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <x-card class="p-10 max-w-lg mx-auto mt-24">
+
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">This is your Lawyer Profile</h2>
         </header>
@@ -69,5 +69,5 @@
             </form>
 
 
-    </x-card>
+
 @endsection
