@@ -42,10 +42,20 @@ use App\Http\Controllers\SplashScreenController;
 
 
 //routers for registration 
-Route::get('/', [SplashScreenController::class, 'firstPage']);
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/', [SplashScreenController::class, 'firstPage'])->name('home');
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+Route::post('/register', [UserController::class, 'store'])->middleware('guest');
 
-Route::get('/register2', [LawyerController::class, 'register2']);
+Route::get('/register2', [LawyerController::class, 'create'])->middleware('guest');
+Route::post('/register2', [LawyerController::class, 'store'])->middleware('guest');
+
+
+Route::get('/login_user', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login_user', [UserController::class, 'authenticate'])->middleware('guest');
+
+
+Route::get('/login', [LawyerController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LawyerController::class, 'authenticate'])->middleware('guest');
 
 //Route::get('/register', [RegisterController::class, 'register'])->name('register');
 
