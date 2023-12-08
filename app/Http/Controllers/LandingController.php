@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lawyer;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -16,16 +17,26 @@ class LandingController extends Controller
 
     public function submitSearch(Request $request)
     {
-        // Handle form submission here
-        // Process $request data and perform necessary actions
+        // Validate the form inputs
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'specialty' => 'required',
+            'location' => 'required|string|max:255',
+        ]);
 
-        // For example, you can retrieve form data like this:
-        $name = $request->input('name');
-        $specialties = $request->input('specialty');
-        $location = $request->input('location');
+        // Retrieve validated form data
+        $name = $validatedData['name'];
+        $specialty = $validatedData['specialty'];
+        $location = $validatedData['location'];
 
         // Perform any necessary logic or database operations based on the submitted data
+        // For example:
+        // Fetch lawyers based on the specialty and location
+        $lawyers = Lawyer::where('specialty', $specialty)
+                         ->where('location', $location)
+                         ->get();
 
-        // Redirect to a different page or return a response
+        // You can pass $lawyers data to a view and display it there
+        return view('search_results', compact('lawyers'));
     }
 }
