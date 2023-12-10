@@ -1,6 +1,7 @@
 Google recaptcha
 
-reCAPTCHA type:v3
+#reCAPTCHA type:v3
+v2 checkbox
 
 reCAPTCHA keys
 
@@ -16,3 +17,4 @@ email is needed!
 
 Verify the origin of reCAPTCHA solutions - MUST BE CHECKED
 
+v2: medium security preference
