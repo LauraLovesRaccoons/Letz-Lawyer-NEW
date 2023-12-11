@@ -17,6 +17,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="//unpkg.com/alpinejs" defer></script>
+        {{-- Import API --}}
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script>
         tailwind.config = {

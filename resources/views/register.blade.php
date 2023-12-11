@@ -194,6 +194,10 @@
                     @enderror
                 </div>
 
+                {{-- Captcha V2 Checkbox --}}
+                <div class="g-recaptcha" data-sitekey="6LejdywpAAAAADPr2hUZwVq7OrtnJ4xDb6SR89Gh"></div>
+                {{-- ------------------- --}}
+
                 <div class="btn-field">
                     <button type="submit" id="signupBtn" name="action" value="signup">Sign Up</button>
                 </div>
