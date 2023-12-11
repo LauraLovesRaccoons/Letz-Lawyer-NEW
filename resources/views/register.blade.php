@@ -195,7 +195,8 @@
                 </div>
 
                 {{-- Captcha V2 Checkbox --}}
-                <div class="g-recaptcha" data-sitekey="6LejdywpAAAAADPr2hUZwVq7OrtnJ4xDb6SR89Gh"></div>
+                {{-- and load key form .env file --}}
+                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                 {{-- ------------------- --}}
 
                 <div class="btn-field">
