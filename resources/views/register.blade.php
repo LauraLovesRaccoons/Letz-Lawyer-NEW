@@ -230,7 +230,7 @@
 
     <script>
         function goBack() {
-            window.location.href ="splashscreen";
+            window.location.href ="/";
         }
     </script>
 

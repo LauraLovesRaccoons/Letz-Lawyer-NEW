@@ -34,9 +34,9 @@ class UserController extends Controller
         auth()->login($user);
 
         if ($user->is_lawyer) {
-            return redirect()->route('lawyers.create_lawyer_data')->with('message', 'Lawyer registered Successfully!');
+            return redirect()->route('lawyers.lawyer_dashboard')->with('message', 'Lawyer registered Successfully!');
         } else {
-            return redirect()->route('UserLandingCatagory.landing')->with('message', 'User registered Successfully!');
+            return redirect()->route('client.client_dashboard')->with('message', 'User registered Successfully!');
         }
     }
     

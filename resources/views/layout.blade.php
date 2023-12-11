@@ -34,6 +34,20 @@
 
 <!-- NAVBAR -->
 <body class="mb-48">
+@auth
+    @if(auth()->user()->is_lawyer)
+        <a href="/lawyers/lawyer_dashboard">lawyer</a>
+    @else
+        <a href="/client/client_dashboard">client</a>
+    @endif
+@else 
+<a href=""></a>
+    
+@endauth
+
+
+
+
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
             <!-- Our Logo -->

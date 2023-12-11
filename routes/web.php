@@ -10,9 +10,10 @@ use App\Http\Controllers\UserController;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 use App\Http\Controllers\YourController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CommonController;
 use App\Http\Controllers\LawyerController;
-use App\Http\Controllers\LandingController;
 
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\SplashScreenController;
@@ -38,34 +39,26 @@ use App\Http\Controllers\SplashScreenController;
 // update - Update Appointment in database
 // destroy - Delete Appointment from database
 
-//*Appointment Routes
-//All appointments
 
 
 //routers for user's registration and log in
 // Splash Screen
 Route::get('/', [SplashScreenController::class, 'firstPage'])->name('SplashScreen');
 
-//Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
-//Route::post('/register', [UserController::class, 'store'])->middleware('guest');
+Route::middleware(['auth', 'role:client'])->group(function () {
+    Route::get('/dashboard', 'CommonController@clientDashboard');
+});
 
-// User Registration
-//Route::get('/register', 'UserController@create')->name('register')->middleware('guest');
-//Route::post('/register', 'UserController@store')->middleware('guest');
+Route::middleware(['auth', 'role:lawyer'])->group(function () {
+    Route::get('/dashboard', 'CommonController@lawyerDashboard');
+});
 
-// User Login
-// Show login form
-//Route::get('/login', [UserController::class, 'showLoginForm'])->name('login')->middleware('guest');
-
-// Handle login form submission
-//Route::post('/login', [UserController::class, 'authenticate'])->middleware('guest');
+//new added routes for the commun dashboard between clients and lawyeres
 
 
-// User Logout
+Route::get('/common/common_dashboard', [CommonController::class, 'showDashboard'])->name('common.dashboard');
 
 
-// Other Routes...test route
-// User Registration
 Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 Route::post('/register', [UserController::class, 'store'])->middleware('guest');
 
@@ -77,20 +70,12 @@ Route::post('/login', [UserController::class, 'authenticate'])->middleware('gues
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
+//landing for client
+Route::get('/landing', [LandingController::class, 'showLandingPage'])->name('landing');
+Route::post('/submit-search', [LandingController::class, 'submitSearch'])->name('lawyer.search.submit');
 
-//routers for lawyer's registration and login
-//Route::get('/register2', [LawyerController::class, 'create'])->middleware('guest');
-//Route::post('/register2', [LawyerController::class, 'store'])->middleware('guest');
 
-//Route::get('/login', [LawyerController::class, 'login'])->name('login')->middleware('guest');
-//Route::post('/login', [LawyerController::class, 'authenticate'])->middleware('guest');
-
-//Route::get('/register', [RegisterController::class, 'register'])->name('register');
-
-//Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2');
-
-//''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
+//All appointments
 //Single Appointment fetched by id in the url
 Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
     ->where('id', '[0-9]+');
@@ -121,6 +106,29 @@ Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])
 
 Route::get('/appointments/manage', [AppointmentController::class, 'manage']);
 
+//*Small fix. This route is used to catch any external links and redirect to them without getting stuck in the app.
+Route::get('/external-link', function(){
+    $url = request('url');
+    return redirect()->away(url($url));
+});
+
+//vic part
+
+//end of vic part
+
+
+// The category route is already defined above. Remove the duplicate definition below.
+Route::get('/category', function () {
+    return view('category');
+})->name('category');
+
+Route::get('/user/{userId}', [UserController::class, 'showUserDetails']);
+
+
+//latest updates on register and log in routs
+Route::get('/lawyers/create', [LandingController::class, 'showLawyer']);
+
+
 //*Using the User controller now
 
 //Show register form
@@ -147,24 +155,9 @@ Route::get('/appointments/manage', [AppointmentController::class, 'manage']);
 
 
 
-//*Small fix. This route is used to catch any external links and redirect to them without getting stuck in the app.
-Route::get('/external-link', function(){
-    $url = request('url');
-    return redirect()->away(url($url));
-});
 
-//vic part
 
-//end of vic part
-Route::get('/landing', [LandingController::class, 'showLandingPage'])->name('landing');
-Route::post('/submit-search', [LandingController::class, 'submitSearch'])->name('lawyer.search.submit');
-
-// The category route is already defined above. Remove the duplicate definition below.
-Route::get('/category', function () {
-    return view('category');
-})->name('category');
-
-Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
+//Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
 
 //Route::get('/lawyers/search', [LawyerController::class, 'search'])->name('lawyers.lawyers.search');
 
@@ -182,13 +175,41 @@ Route::post('/search', 'LawyerController@search')->name('lawyer.search.submit');
 
 //Route::get('/splashScreen', [SplashScreenController::class, 'firstPage'])->name('splashScreen');
 
-Route::get('/user/{userId}', [UserController::class, 'showUserDetails']);
-
-
-//latest updates on register and log in routs
-Route::get('/lawyers/create', [LandingController::class, 'showLawyer']);
 
 
 //// // test route
 //// Route::get('/lawyers/test', [LawyerController::class, 'testcreatelawyer']);
+
+//routers for lawyer's registration and login
+//Route::get('/register2', [LawyerController::class, 'create'])->middleware('guest');
+//Route::post('/register2', [LawyerController::class, 'store'])->middleware('guest');
+
+//Route::get('/login', [LawyerController::class, 'login'])->name('login')->middleware('guest');
+//Route::post('/login', [LawyerController::class, 'authenticate'])->middleware('guest');
+
+//Route::get('/register', [RegisterController::class, 'register'])->name('register');
+
+//Route::get('/register2', [Register2Controller::class, 'register2'])->name('register2')
+//Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
+//Route::post('/register', [UserController::class, 'store'])->middleware('guest');
+
+// User Registration
+//Route::get('/register', 'UserController@create')->name('register')->middleware('guest');
+//Route::post('/register', 'UserController@store')->middleware('guest');
+
+// User Login
+// Show login form
+//Route::get('/login', [UserController::class, 'showLoginForm'])->name('login')->middleware('guest');
+
+// Handle login form submission
+//Route::post('/login', [UserController::class, 'authenticate'])->middleware('guest');
+
+
+// User Logout
+
+
+// Other Routes...test route
+// User Registration
+
+
 

@@ -28,10 +28,10 @@ class LawyerController extends Controller
         return view('lawyers.create_lawyer_data');
     }
 
-    public function create()
-    {
-        return view('register2');
-    }
+    //public function create()
+    //{
+   //    return view('register2');
+   // }
    // public function register2()
    // {
   //      return view('register2');
