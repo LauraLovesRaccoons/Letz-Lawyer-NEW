@@ -29,4 +29,8 @@ class LandingController extends Controller
 
         // Redirect to a different page or return a response
     }
+    public function showLawyer()
+    {
+        return view('lawyers.create_lawyer_data');
+    }
 }

@@ -17,7 +17,7 @@ class SerchController extends Controller
         if ($selectedCategory) {
             $lawyers = Category::findOrFail($selectedCategory)->lawyers;
         } else {
-            $lawyers = Lawyer::all();
+           // $lawyers = Lawyer::all();
         }
 
         return view('search', compact('lawyers', 'categories', 'selectedCategory'));

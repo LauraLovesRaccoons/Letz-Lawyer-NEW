@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <x-card class="p-10 max-w-lg mx-auto mt-24">
+    
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Create your Lawyer profile
@@ -181,5 +181,5 @@
                 <a href="/" class="text-black ml-4"> Back </a>
             </div>
         </form>
-    </x-card>
+   
 @endsection

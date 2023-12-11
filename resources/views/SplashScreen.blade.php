@@ -60,27 +60,21 @@
     <title>Splash Screen</title>
 </head>
 <body>
-    <div class="logo-container" >
+    <div class="logo-container">
         {{-- add logo path here --}}
-        {{-- <img url() > --}}
-        <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo"  id="logo">
-
-
-
-       {{--<a href="{{ route('register') }}">Go to Register Page</a>--}}
-
-        
+        <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo" id="logo">
+    
         <div class="buttons-container" id="buttonsContainer">
-            <button class="button" onclick="goToPage('register')">Clients</button>
-            <button class="button" onclick="goToPage('register2')">Lawyers</button>
+            <a href="{{ route('register') }}" class="button">Go to Registration</a>
+
         </div>
     </div>
-
+    
     <script>
         function toggleButtons() {
             var buttonsContainer = document.getElementById('buttonsContainer');
             var logo = document.getElementById('logo');
-
+    
             if (buttonsContainer.style.display === 'none' || buttonsContainer.style.display === '') {
                 buttonsContainer.style.display = 'flex';
                 logo.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.8)';
@@ -89,11 +83,8 @@
                 logo.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.5)';
             }
         }
-
-        function goToPage(page) {
-            window.location.href = page;
-        }
     </script>
+   
 </body>
 </html>
 

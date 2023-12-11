@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_lawyer',
     ];
 
     /**
@@ -40,5 +41,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setIsLawyerAttribute($value)
+{
+    $this->attributes['is_lawyer'] = (bool) $value;
+}
+    public function appointmentsAsClient()
+    {
+        return $this->hasMany(Appointment::class, 'client_user_id', 'id');
+    }
+
+    public function appointmentsAsLawyer()
+    {
+        return $this->hasMany(Appointment::class, 'lawyer_user_id', 'id');
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'users_categories', 'user_id', 'category_id');
+    }
 }
 

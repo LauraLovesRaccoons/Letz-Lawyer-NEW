@@ -12,8 +12,8 @@ class LawyerSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
-        Lawyer::factory()->count(10)->create(); // Adjust the count as needed
-    }
+    //public function run(): void
+   // {
+      //  Lawyer::factory()->count(10)->create(); // Adjust the count as needed
+   // }
 }

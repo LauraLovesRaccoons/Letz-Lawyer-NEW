@@ -16,15 +16,15 @@ return new class extends Migration
             $table->foreignId('user_id')
             ->constrained()
             ->onDelete('cascade');
-      $table->string('name');
-      $table->string('logo')->nullable();
-      $table->string('tags');
-      $table->string('location');
-      $table->string('company');
-      $table->string('email');
-      $table->string('website');
-      $table->longText('description');
-      $table->timestamps();
+            $table->string('name');
+            $table->string('logo')->nullable();
+            $table->string('tags');
+            $table->string('location');
+            $table->string('company');
+            $table->string('email');
+            $table->string('website');
+            $table->longText('description');
+            $table->timestamps();
         });
     }
 
