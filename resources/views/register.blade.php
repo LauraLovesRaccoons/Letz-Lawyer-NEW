@@ -201,10 +201,10 @@
 
                     {{-- Captcha V2 Checkbox --}}
                     {{-- and load key form .env file --}}
-                    {{-- <div class="g-recaptcha" id="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                    <div class="g-recaptcha" id="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                     @error('g-recaptcha')
                         <p>{{ $message }}</p>
-                    @enderror --}}
+                    @enderror
                     {{-- ------------------- --}}
 
                     <div class="btn-field">

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
@@ -17,12 +18,39 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        // dd($request->session());
+
         $request->validate([
             'name' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(2), 'confirmed'],
             'is_lawyer' => 'boolean',
         ]);
+
+        
+        // Captcha API
+        // send and receive data from google recaptcha
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $params = [
+            'secret' => env('RECAPTCHA_SECRET_KEY'),
+            'response' => $request->input('g-recaptcha-response'),
+        ];
+
+        // api json received
+        $response = Http::get($url, $params);
+        // api json decoding
+        $responseData = json_decode($response->body());
+
+        // error msg if captcha is not checked or failed
+        if (!$responseData->success) {
+            // reCAPTCHA validation failed
+            return redirect('/register')->withErrors([
+                'g-recaptcha' => 'Please verify that you are not a robot.'  // Error message
+            ]);
+        }
+        // End Captcha API
+        
 
         $user = User::create([
             'name' => $request->input('name'),
