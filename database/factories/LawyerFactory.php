@@ -5,10 +5,7 @@ use App\Models\Lawyer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Lawyer as Model;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Lawyer>
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<Model>
- */
+
 class LawyerFactory extends Factory
 {
     protected $model = Lawyer::class;

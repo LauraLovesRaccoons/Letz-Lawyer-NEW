@@ -152,90 +152,87 @@
 </head>
 <body>
 
-
     <div class="form-box">
 
         <button class="btn-back" onclick="goBack()"><i class="fas fa-arrow-left-long"></i> Go Back</button>
-    
 
+        <!-- Sign Up Form -->
         <h1 id="title">Sign Up</h1>
-        <form>
+        <form action="{{ route('register') }}" method="post">
+            <div class="mb-6">
+                <label for="is_lawyer" class="inline-block text-lg mb-2">Are you a lawyer?</label>
+                <input type="checkbox" id="is_lawyer" name="is_lawyer" value="1" {{ old('is_lawyer') ? 'checked' : '' }}>
+            </div>
+            @csrf
             <div class="input-group">
                 <div class="input-field" id="nameField">
-                    <!-- adding an Icons from fontawesome -->
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" name="name" value="{{ old('name') }}">
+                    @error('name')
+                    <p>{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="input-field" id="emailField">
-                    <!-- adding an Icons from fontawesome -->
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <p>{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="input-field" id="passwordField">
-                    <!-- adding an Icons from fontawesome -->
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="password">
                 </div>
 
                 <div class="input-field" id="confirmPasswordField">
-                    <!-- adding an Icons from fontawesome -->
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="Confirm Password">
+                    <input type="password" placeholder="Confirm Password" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                    @error('password_confirmation')
+                    <p>{{ $message }}</p>
+                    @enderror
                 </div>
 
-                <!-- maybe we can add this sentence  line 155 -->
-                <!-- <p> Lost password <a href="#"> Click Here !</a></p> -->
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn" name="action" value="signup">Sign Up</button>
+                </div>
             </div>
-            <div class="btn-field">
-                <button type="button" id="signupBtn">Sign Up</button>
-                <button type="button" id="signinBtn" class="disable">Sign In</button>
-                <!-- <button class="btn-back" onclick="goBack()">Go Back</button> -->
+        </form>
 
-              
+        <!-- Sign In Form -->
+        <h1 id="title">Sign In</h1>
+        <form action="{{ route('login') }}" method="post">
+            @csrf
+            <div class="input-group">
+                <div class="input-field" id="signInEmailField">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="input-field" id="signInPasswordField">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password">
+                    @error('password')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="btn-field">
+                    <button type="submit" id="signinBtn" name="action" value="signin">Sign In</button>
+                </div>
             </div>
         </form>
     </div>
 
-<script>
-    let signupBtn = document.getElementById("signupBtn");
-    let signinBtn = document.getElementById("signinBtn");
-    let nameField = document.getElementById("nameField");
-    let emailField = document.getElementById("emailField");
-    let passwordField = document.getElementById("passwordField");
-    let confirmPasswordField = document.getElementById("confirmPasswordField");
-    let title = document.getElementById("title");
-
-    signinBtn.onclick = function () {
-        nameField.style.maxHeight = "0";
-        emailField.style.maxHeight = "60px"; // Show the email field
-        passwordField.style.maxHeight = "60px";
-        confirmPasswordField.style.maxHeight = "0"; // Hide the confirm password field
-        title.innerHTML = "Sign In";
-        signupBtn.classList.add("disable");
-        signinBtn.classList.remove("disable");
-    };
-
-    signupBtn.onclick = function () {
-        nameField.style.maxHeight = "60px";
-        emailField.style.maxHeight = "60px";
-        passwordField.style.maxHeight = "60px";
-        confirmPasswordField.style.maxHeight = "60px"; // Show the confirm password field
-        title.innerHTML = "Sign Up";
-        signupBtn.classList.remove("disable");
-        signinBtn.classList.add("disable");
-    };
-
-
-    
-    function goBack() {
-        window.location.href = "splashscreen.php";
+    <script>
+        function goBack() {
+            window.location.href ="splashscreen";
         }
-
-   
-
-</script>
+    </script>
 
 </body>
 </html>

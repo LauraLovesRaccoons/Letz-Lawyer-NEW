@@ -23,12 +23,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => bcrypt('password'),
+            User::factory(10)->create(['is_lawyer' => \Faker\Factory::create()->boolean])
         ]);
 
         // Seed Lawyers associated with the user
-        Lawyer::factory(5)->create([
-            'user_id' => $user->id,
-        ]);
+        //Lawyer::factory(5)->create([
+          //  'user_id' => $user->id,
+       // ]);
 
         // Seed Categories
         Category::factory(5)->create();

@@ -21,9 +21,6 @@ class Category extends Model
         return $this->hasMany(Post::class);
     }
 
-    public function lawyers()
-    {
-        return $this->belongsToMany(Lawyer::class);
-    }
+    
 }
 
