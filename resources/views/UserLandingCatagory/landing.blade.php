@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div style="padding: 25px;"> {{-- design padding --}}
+<div style="padding: 25px; max-width: 350px;"> {{-- design padding and width limit for select specality --}}
+
     <h2 class="text-3xl">Search for your lawyer</h2>
     <br>
 
