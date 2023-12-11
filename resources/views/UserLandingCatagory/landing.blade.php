@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div style="padding: 100px;">
-    <h2 class="text-3xl">Welcome to the Landing Page</h2>
+<div style="padding: 25px;"> {{-- design padding --}}
+    <h2 class="text-3xl">Search for your lawyer</h2>
     <br>
 
     <form method="POST" action="{{ route('lawyer.search.submit') }}">
@@ -69,5 +69,5 @@
         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Find your Lawyer</button>
     </form>
 
-</div>
+</div> {{-- design padding OFF--}}
 @endsection
