@@ -45,12 +45,12 @@ use App\Http\Controllers\SplashScreenController;
 // Splash Screen
 Route::get('/', [SplashScreenController::class, 'firstPage'])->name('SplashScreen');
 
-Route::middleware(['auth', 'role:client'])->group(function () {
-    Route::get('/client', 'CommonController@clientDashboard');
+Route::middleware(['auth', 'role:lawyer'])->group(function () {
+    Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard'])->name('lawyers.lawyer_dashboard');
 });
 
-Route::middleware(['auth', 'role:lawyer'])->group(function () {
-    Route::get('/lawyers', 'CommonController@lawyerDashboard');
+Route::middleware(['auth', 'role:client'])->group(function () {
+    Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboard'])->name('client.client_dashboard');
 });
 
 // Use a different path for the second common dashboard route
@@ -72,7 +72,7 @@ Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboar
 Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 Route::post('/register', [UserController::class, 'store'])->middleware('guest');
 
-// User Login
+// User Login // changed to login controller
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'authenticate'])->middleware('guest');
 
