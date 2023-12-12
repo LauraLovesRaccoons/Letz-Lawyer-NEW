@@ -75,20 +75,28 @@ class UserController extends Controller
       return view('login');
   }
 
-    public function authenticate(Request $request)
-    {
-        $formFields = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-
-        if (auth()->attempt($formFields)) {
-            $request->session()->regenerate();
-            return redirect('/client/client_dashboard')->with('message', 'User logged in Successfully!');
-        }
-
-        return back()->withErrors(['login' => 'Invalid Credentials']);
-    }
+  public function authenticate(Request $request)
+  {
+      $formFields = $request->validate([
+          'email' => ['required', 'email'],
+          'password' => ['required'],
+      ]);
+  
+      if (auth()->attempt($formFields)) {
+          $user = auth()->user();
+  
+          if ($user->is_lawyer) {
+              
+              return redirect('/lawyers/lawyer_dashboard')->with('message', 'Lawyer logged in Successfully!');
+          } else {
+             
+              return redirect('/client/client_dashboard')->with('message', 'client logged in Successfully!');
+          }
+      }
+  
+      return back()->withErrors(['login' => 'Invalid Credentials']);
+  }
+  
 
     public function showUserDetails($userId)
     {

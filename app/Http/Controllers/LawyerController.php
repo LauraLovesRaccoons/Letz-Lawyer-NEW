@@ -104,9 +104,8 @@ class LawyerController extends Controller
     {
        
         $allLawyerPosts = Post::all();  
-        
 
-       
+        
         return view('lawyers.lawyer_dashboard', compact('allLawyerPosts'));
     }
 
