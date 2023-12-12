@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('content')
-    <div style="padding: 55px; max-width: 450px;"> {{-- design padding and width limit for select specality --}}
-        <h1>Welcome to the Client Dashboard, {{ Auth::user()->name }}!</h1>
+    <h1>Welcome to the Client Dashboard, {{ Auth::user()->name }}!</h1>
 
 
     </div>
 
-    <div style="padding: 100px;">
+    <div style="padding: 55px; max-width: 450px;"> {{-- design padding and width limit for select specality --}}
+
 
         <br>
 
