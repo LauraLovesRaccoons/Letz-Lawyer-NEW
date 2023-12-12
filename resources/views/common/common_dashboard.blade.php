@@ -16,6 +16,7 @@
         @foreach ($results as $user)
             <li>
                 <h3>{{ $user->name }}</h3>
+                <p><img style="width: 157px; box-sizing: border-box; padding: 10px 0;" src="https://thispersondoesnotexist.com/" alt="{{ $user->name }}'s picture is not loading properly."></p>
                 <p>{{ $user->email }}</p>
                 {{-- <p>{{ $post->description }}</p>
                 <p>{{ $post->email }}</p>
