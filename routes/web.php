@@ -52,6 +52,7 @@ Route::middleware(['auth', 'role:lawyer'])->group(function () {
 Route::middleware(['auth', 'role:client'])->group(function () {
     Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboard'])->name('client.client_dashboard');
 });
+Route::post('/search', [CommonController::class, 'search'])->name('lawyer.search.submit');
 
 // Use a different path for the second common dashboard route
 Route::get('/common/common_dashboard', [CommonController::class, 'showDashboard'])->name('common.dashboard');

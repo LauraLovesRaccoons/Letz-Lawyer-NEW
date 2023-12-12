@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CommonController extends Controller
 {
@@ -18,6 +19,14 @@ class CommonController extends Controller
 {
     // Logic for client dashboard
     return view('client.client_dashboard');
+}
+
+// search function
+public function search(Request $request)
+{
+    $search = $request->get('name');
+    $results = User::where('name', 'like', '%' . $search . '%')->where('is_lawyer', '=', 1)->paginate(5);
+    return view('common.common_dashboard', ['results' => $results]);
 }
 
 public function lawyerDashboard()

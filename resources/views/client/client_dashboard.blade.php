@@ -14,7 +14,7 @@
         {{-- smth like this - WORKING QUERY --}}
         {{-- SELECT * FROM users WHERE name = 'Laura' AND is_lawyer = 1; --}}
 
-        <form method="POST" action="{{ route('lawyer.search.submit') }}">
+        <form method="POST" action="/search">
             @csrf
             <div>
                 <label for="name">Name:</label>
@@ -75,9 +75,8 @@
                     class="border border-gray-300 rounded-md p-2">
             </div>
             <br>
-            <input type="hidden" name="redirect_url" value="{{ route('category') }}">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Find your
-                Lawyer</button>
+
+            <input type="submit" value="Find your lawyer" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         </form>
 
     </div> {{-- end of design padding and width limit for select specality --}}
