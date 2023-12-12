@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -28,14 +29,33 @@ class AppointmentController extends BaseController
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view('appointments.create');
-    }
-    public function confirm()
-    {
-        return view('appointments.confirm');
-    }
+ 
+     public function createForm()
+     {
+         return view('appointments.create');
+     }
+ 
+     public function create(Request $request)
+     {
+         // Your appointment creation logic here
+         // ...
+ 
+         // Assuming you have an Appointment model
+         $appointment = new Appointment();
+         $appointment->fill($request->all());
+         $appointment->save();
+ 
+         // Redirect to the confirmation page with the appointment ID
+         return redirect()->route('appointments.confirm', ['id' => $appointment->id]);
+     }
+ 
+     public function confirm($id)
+     {
+         // Fetch the appointment by ID
+         $appointment = Appointment::findOrFail($id);
+ 
+         return view('appointments.confirm', compact('appointment'));
+     }
     public function manage()
     {
         return view('appointments.manage');
