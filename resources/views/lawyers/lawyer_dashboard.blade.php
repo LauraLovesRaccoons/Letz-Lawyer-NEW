@@ -1,14 +1,12 @@
 @extends('layout')
 
 
+
 @section('content')
+    <div class="container">
+        <h1>Welcome to your Lawyer Dashboard, {{ Auth::user()->name }}!</h1>
 
-<div class="container">
-    <h1>Welcome to the Lawyer Dashboard, {{ Auth::user()->name }}!</h1>
-
-    
-</div>
-    
+       
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Create your Lawyer profile
@@ -185,5 +183,10 @@
                 <a href="/" class="text-black ml-4"> Back </a>
             </div>
         </form>
-   
+
+        <a href="/lawyers/lawyer_dashboard">Create New Post</a>
+    </div>
 @endsection
+
+   
+

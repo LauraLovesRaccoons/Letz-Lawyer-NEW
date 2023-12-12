@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rules\Password;
+use App\Models\Post;
 
 class UserController extends Controller
 {
@@ -40,6 +41,7 @@ class UserController extends Controller
         }
     }
     
+
    
 
     public function search()
@@ -82,7 +84,7 @@ class UserController extends Controller
 
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-            return redirect('/landing')->with('message', 'User logged in Successfully!');
+            return redirect('/client/client_dashboard')->with('message', 'User logged in Successfully!');
         }
 
         return back()->withErrors(['login' => 'Invalid Credentials']);
@@ -98,6 +100,9 @@ class UserController extends Controller
 
         return view('user.details', compact('user', 'appointmentsAsClient', 'appointmentsAsLawyer', 'posts', 'categories'));
     }
+
+    
+    
 
 
 }

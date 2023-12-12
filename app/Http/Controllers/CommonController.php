@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
 {
 
     public function showDashboard(){
-        return view('common.common_dashboard');
+        $allLawyerPosts = Post::all();  
+
+        return view('common.common_dashboard', compact('allLawyerPosts'));
     }
     public function clientDashboard()
 {
     // Logic for client dashboard
-    return view('cient.client_dashboard');
+    return view('client.client_dashboard');
 }
 
 public function lawyerDashboard()

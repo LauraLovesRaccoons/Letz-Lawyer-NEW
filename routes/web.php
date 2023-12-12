@@ -46,17 +46,27 @@ use App\Http\Controllers\SplashScreenController;
 Route::get('/', [SplashScreenController::class, 'firstPage'])->name('SplashScreen');
 
 Route::middleware(['auth', 'role:client'])->group(function () {
-    Route::get('/dashboard', 'CommonController@clientDashboard');
+    Route::get('/client', 'CommonController@clientDashboard');
 });
 
 Route::middleware(['auth', 'role:lawyer'])->group(function () {
-    Route::get('/dashboard', 'CommonController@lawyerDashboard');
+    Route::get('/lawyers', 'CommonController@lawyerDashboard');
 });
 
-//new added routes for the commun dashboard between clients and lawyeres
-
-
+// Use a different path for the second common dashboard route
 Route::get('/common/common_dashboard', [CommonController::class, 'showDashboard'])->name('common.dashboard');
+
+Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard']);
+Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboard']);
+
+
+// Route::middleware(['auth', 'role:lawyer'])->group(function () {
+//     Route::get('/lawyers/lawyer_dashboard', 'LawyerController@showLawyerDashboard');
+//     // Add more routes for lawyers as needed
+// });
+
+
+
 
 
 Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
@@ -127,6 +137,9 @@ Route::get('/user/{userId}', [UserController::class, 'showUserDetails']);
 
 //latest updates on register and log in routs
 Route::get('/lawyers/create', [LandingController::class, 'showLawyer']);
+// Add this in your web.php file
+Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard'])->name('lawyer.dashboard');
+
 
 
 //*Using the User controller now

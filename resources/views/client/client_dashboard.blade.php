@@ -9,7 +9,7 @@
 </div>
 
 <div style="padding: 100px;">
-    <h2 class="text-3xl">Welcome to the Landing Page</h2>
+    
     <br>
 
     <form method="POST" action="{{ route('lawyer.search.submit') }}">
