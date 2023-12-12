@@ -6,8 +6,12 @@
 
     </div>
 
+    <div style="margin-left: 20px;">
+    <br>
     <h2>All Lawyer Posts:</h2>
-
+    <br>
+    <hr>
+    <br>
     <ul>
         @foreach ($results as $user)
             <li>
@@ -16,10 +20,14 @@
                 {{-- <p>{{ $post->description }}</p>
                 <p>{{ $post->email }}</p>
                 <p>{{ $post->location }}</p> --}}
-              
+                <br>
+                <hr>
+                <br>
             </li>
         @endforeach
+        <h4>End of Results</h4>
     </ul>
+    <br>
 
     @if (auth()->user()->is_lawyer ==1)
         <a href="/lawyers/lawyer_dashboard" class="btn btn-primary">Go to Lawyer Dashboard</a>
