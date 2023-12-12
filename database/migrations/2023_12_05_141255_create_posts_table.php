@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('company');
             $table->text('description');
             $table->string('email');
-            $table->name('name');
+            $table->string('name');
 
         });
     }
