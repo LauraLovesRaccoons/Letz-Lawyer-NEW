@@ -25,10 +25,10 @@ class LoginController extends Controller
     
             if ($user->is_lawyer) {
                 
-                return redirect()->route('lawyers.create_lawyer_data')->with('message', 'Lawyer logged in Successfully!');
+                return redirect()->route('lawyers.lawyer_dashboard')->with('message', 'Lawyer logged in Successfully!');
             } else {
                
-                return redirect()->route('UserLandingCatagory.landing')->with('message', 'User logged in Successfully!');
+                return redirect()->route('client.client_dashboard')->with('message', 'User logged in Successfully!');
             }
         }
     

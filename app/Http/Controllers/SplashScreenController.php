@@ -8,6 +8,7 @@ class SplashScreenController extends Controller
 {
     public function firstPage()
     {
+        
         return view('SplashScreen');
     }
 }

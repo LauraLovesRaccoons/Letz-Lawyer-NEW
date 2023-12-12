@@ -36,6 +36,20 @@
 
 <!-- NAVBAR -->
 <body class="mb-48">
+@auth
+    @if(auth()->user()->is_lawyer)
+        <a href="/lawyers/lawyer_dashboard">lawyer</a>
+    @else
+        <a href="/client/client_dashboard">client</a>
+    @endif
+@else 
+<a href=""></a>
+    
+@endauth
+
+
+
+
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
             <!-- Our Logo -->
@@ -95,5 +109,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('public/dashboard.css') }}">
 </body>
 </html>

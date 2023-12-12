@@ -249,7 +249,48 @@
 
     </body>
 
-    </html>
+                <div class="btn-field">
+                    <button type="submit" id="signupBtn" name="action" value="signup">Sign Up</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Sign In Form -->
+        <h1 id="title">Sign In</h1>
+        <form action="{{ route('login') }}" method="post">
+            @csrf
+            <div class="input-group">
+                <div class="input-field" id="signInEmailField">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="input-field" id="signInPasswordField">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password">
+                    @error('password')
+                    <p>{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="btn-field">
+                    <button type="submit" id="signinBtn" name="action" value="signin">Sign In</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href ="/";
+        }
+    </script>
+
+</body>
+</html>
 
 
 @endsection

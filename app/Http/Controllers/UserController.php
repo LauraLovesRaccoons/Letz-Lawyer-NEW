@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules\Password;
+use App\Models\Post;
 
 class UserController extends Controller
 {
@@ -62,12 +63,13 @@ class UserController extends Controller
         auth()->login($user);
 
         if ($user->is_lawyer) {
-            return redirect()->route('lawyers.create_lawyer_data')->with('message', 'Lawyer registered Successfully!');
+            return redirect()->route('lawyers.lawyer_dashboard')->with('message', 'Lawyer registered Successfully!');
         } else {
-            return redirect()->route('UserLandingCatagory.landing')->with('message', 'User registered Successfully!');
+            return redirect()->route('client.client_dashboard')->with('message', 'User registered Successfully!');
         }
     }
     
+
    
 
     public function search()
@@ -110,7 +112,7 @@ class UserController extends Controller
 
         if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
-            return redirect('/landing')->with('message', 'User logged in Successfully!');
+            return redirect('/client/client_dashboard')->with('message', 'User logged in Successfully!');
         }
 
         return back()->withErrors(['login' => 'Invalid Credentials']);
@@ -126,6 +128,9 @@ class UserController extends Controller
 
         return view('user.details', compact('user', 'appointmentsAsClient', 'appointmentsAsLawyer', 'posts', 'categories'));
     }
+
+    
+    
 
 
 }
