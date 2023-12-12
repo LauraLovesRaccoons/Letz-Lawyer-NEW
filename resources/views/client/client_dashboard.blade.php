@@ -10,6 +10,9 @@
 
 
         <br>
+        {{-- For now I'm doing a query that just checks for the name in the user's table and checks for is lawyer = true --}}
+        {{-- smth like this - WORKING QUERY --}}
+        {{-- SELECT * FROM users WHERE name = 'Laura' AND is_lawyer = 1; --}}
 
         <form method="POST" action="{{ route('lawyer.search.submit') }}">
             @csrf
