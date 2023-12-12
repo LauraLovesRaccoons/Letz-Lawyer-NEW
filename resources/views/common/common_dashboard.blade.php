@@ -9,13 +9,13 @@
     <h2>All Lawyer Posts:</h2>
 
     <ul>
-        @foreach ($allLawyerPosts as $post)
+        @foreach ($results as $user)
             <li>
-                <h5>{{ $post->name }}</h5>
-                <h3>{{ $post->company }}</h3>
+                <h5>{{ $user->name }}</h5>
+                {{-- <h3>{{ $post->company }}</h3>
                 <p>{{ $post->description }}</p>
                 <p>{{ $post->email }}</p>
-                <p>{{ $post->location }}</p>
+                <p>{{ $post->location }}</p> --}}
               
             </li>
         @endforeach
