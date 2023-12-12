@@ -7,43 +7,6 @@
 
 <!-- sidebar.blade.php -->
 
-<div class="bg-white h-screen w-96 fixed top-0 left-0 flex flex-col items-center p-16 shadow-md" style="display: flex;flex-direction:column;">
-    <!-- Avatar Icon (replace with your own) -->
-    <img src="https://thispersondoesnotexist.com/" alt="Avatar" class="w-40 h-40 rounded-full mb-4">
-    <br>
-
-        <!-- Sidebar Links -->
-    <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-2xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Dashboard</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Clients</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Lawyers</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">MyProfile</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Settings</a>
-            </div>
-            
-        </div>
         <br>
         <form method="POST" action="{{-- route('logout') --}}">
             @csrf

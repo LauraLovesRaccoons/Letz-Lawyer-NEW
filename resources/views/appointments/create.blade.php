@@ -18,33 +18,17 @@
 
         <!-- Sidebar Links -->
     <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-2xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Dashboard</a>
-            </div>
+      
+       
+            
+       
+            
+     
             
         </div>
         <div style="display:flex;flex-direction: row ; gap:77px">
             <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Clients</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Lawyers</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">MyProfile</a>
-            </div>
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
-            <div class="text-center my-4">
-                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">Settings</a>
+                <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="/appointments/manage">Settings</a>
             </div>
             
         </div>
@@ -160,8 +144,8 @@
     
 
     
-    
-    <form method="POST" class="bg-white shadow-xl rounded-lg py-3  " style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
+    <form action="{{ route('appointments.create') }}" method="post" enctype="multipart/form-data" class="bg-white shadow-xl rounded-lg py-3" style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
+        @csrf
         <div class="relative z-0 w-full mb-5 group">
             <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
             <label for="floating_email" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
@@ -194,14 +178,10 @@
         </div>
         <div class="grid md:grid-cols-2 md:gap-6">
         <div class="relative z-0 w-full mb-5 group">
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <input type="tel" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
             <label for="floating_phone" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number</label>
         </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_company" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company</label>
-        </div>
-        </div>
+   
         <div class="relative inline-flex items-end" style="margin-left:100px">
             <button type="submit" class="relative bg-gradient-to-r from-sky-600 to-cyan-200 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Book Now

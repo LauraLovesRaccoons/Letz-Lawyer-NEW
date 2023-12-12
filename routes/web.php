@@ -142,7 +142,11 @@ Route::get('/lawyers/create', [LandingController::class, 'showLawyer']);
 Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard'])->name('lawyer.dashboard');
 
 
-
+Route::get('/appointments/create', [AppointmentController::class, 'createForm']);
+// Submit appointment
+Route::post('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
+// Show confirmation page
+Route::get('/appointments/confirm/{id}', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
 //*Using the User controller now
 
 //Show register form
