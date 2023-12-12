@@ -104,7 +104,8 @@
 
         <div class="max-w-lg bg-white shadow-xl rounded-lg p-8" style="width:550px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;">
             <div class="photo-wrapper p-4">
-                <img class="w-48 h-48 rounded-full mx-auto" src="https://thispersondoesnotexist.com/" alt="John Doe">
+                {{-- <img class="w-48 h-48 rounded-full mx-auto" src="https://thispersondoesnotexist.com/" alt="John Doe"> --}}
+                <img class="w-48 h-48 rounded-full mx-auto" src="{{ asset('images/Logo_V0.3.png') }}" alt="'s picture is not loading properly.">
             </div>
             <div class="p-4">
                 <h3 class="text-center text-3xl text-gray-900 font-medium leading-8">John Doe</h3>
