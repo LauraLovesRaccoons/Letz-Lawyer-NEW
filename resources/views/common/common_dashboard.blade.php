@@ -11,9 +11,9 @@
     <ul>
         @foreach ($results as $user)
             <li>
-                <h5>{{ $user->name }}</h5>
-                {{-- <h3>{{ $post->company }}</h3>
-                <p>{{ $post->description }}</p>
+                <h3>{{ $user->name }}</h3>
+                <p>{{ $user->email }}</p>
+                {{-- <p>{{ $post->description }}</p>
                 <p>{{ $post->email }}</p>
                 <p>{{ $post->location }}</p> --}}
               
