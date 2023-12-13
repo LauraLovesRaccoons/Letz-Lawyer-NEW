@@ -54,7 +54,7 @@
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             
-            <li>
+            {{-- <li>
                 @auth
                     @if (auth()->user()->is_lawyer)
                         <a href="/lawyers/lawyer_dashboard"><i class="fa-solid fa-gavel"></i>&nbsp;&nbsp;Lawyer</a>
@@ -63,14 +63,24 @@
                     @endif
                 @else
                     <a href=""></a>
-
                 @endauth
-            </li>
+            </li> --}}
             @auth
                 <li>
                     <span class="font-bold uppercase">
                         Welcome {{ auth()->user()->name }}
                     </span>
+                </li>
+                <li>
+                    {{-- @auth --}}
+                        @if (auth()->user()->is_lawyer)
+                            <a href="/lawyers/lawyer_dashboard"><i class="fa-solid fa-gavel"></i>&nbsp;&nbsp;Lawyer</a>
+                        @else
+                            <a href="/client/client_dashboard"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Client</a>
+                        @endif
+                    {{-- @else
+                        <a href=""></a> --}}
+                    {{-- @endauth --}}
                 </li>
                 <li>
                     <a href="/appointments/manage">
