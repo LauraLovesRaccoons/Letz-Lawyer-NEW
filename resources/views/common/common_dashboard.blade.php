@@ -55,7 +55,7 @@
                             </li>
                         @endforeach
                         <br>
-                        <li class="list-group-item text-muted">End of Results</li>
+                        <li class="list-group-item text-muted" style="background-color: #e6bcbc !important;">End of Results</li>
                     </ul>
                 @else
                     <div class="row">
