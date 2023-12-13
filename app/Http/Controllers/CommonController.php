@@ -27,7 +27,8 @@ class CommonController extends Controller
 
     public function search(Request $request)
     {
-        // Check if a search query is present
+        // do the seach query 
+        // SELECT * FROM users WHERE name = 'Laura' AND is_lawyer = 1;
         if ($request->has('name')) {
             $search = $request->get('name');
             $results = User::where('name', 'like', '%' . $search . '%')->where('is_lawyer', '=', 1)->paginate(5);
