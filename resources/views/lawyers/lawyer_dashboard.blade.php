@@ -89,7 +89,7 @@
         </header>
 {{-- 
         <form action="/lawyers" method="post" enctype="multipart/form-data"> --}}
-            <form action="/client/client_dashboard" >
+            <form action="/lawyer/lawyer_profile" >
             @csrf
 
             <div class="mb-6">
@@ -230,7 +230,7 @@
 
 
             <div class="mb-6">
-                <button class="btn-laravel">Upload Lawyer Profile</button>
+                <button class="btn-laravel"><a href="/lawyers/lawyer_profile">Upload Lawyer Profile</a></button>
                 <br>
                 <div>
                     <a href="/common/common_dashboard">See other's posts</a>

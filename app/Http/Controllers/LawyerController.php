@@ -35,21 +35,20 @@ class LawyerController extends Controller
     {
         $formFields = $request->validate([
             'name' => 'required',
-            
+
             'company' => ['required'],
             'location' => 'required',
-            'website' => ['required','url'],
-            'logo' => [ 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'website' => ['required', 'url'],
+            'logo' => ['image', 'mimes:png,jpg,jpeg', 'max:2048'],
             'email' => ['required', 'email'],
             'tags' => 'required',
             'description' => 'required',
         ]);
-
     }
 
     public function edit(User $lawyer)
     {
-        
+
         $this->authorize('update', $lawyer);
 
         return view('lawyers.edit', compact('lawyer'));
@@ -57,18 +56,14 @@ class LawyerController extends Controller
 
     public function update(Request $request, User $lawyer)
     {
-        
-        $this->authorize('update', $lawyer);
 
-        
+        $this->authorize('update', $lawyer);
     }
 
     public function destroy(User $lawyer)
     {
-        
-        $this->authorize('delete', $lawyer);
 
-       
+        $this->authorize('delete', $lawyer);
     }
 
     public function manage()
@@ -102,22 +97,31 @@ class LawyerController extends Controller
 
     public function showLawyerDashboard()
     {
-       
-        $allLawyerPosts = Post::all();  
 
-        
+        $allLawyerPosts = Post::all();
+
+
         return view('lawyers.lawyer_dashboard', compact('allLawyerPosts'));
     }
 
-   // public function index(){
-        //return view('lawyers.lawyer_dashboard',
-       // [
-           // 'lawyerPosts' => User::latest()
-                    //->filter(request(['description', 'category']))
-                   // ->paginate(4),
-       // ]);
+    // public function index(){
+    //return view('lawyers.lawyer_dashboard',
+    // [
+    // 'lawyerPosts' => User::latest()
+    //->filter(request(['description', 'category']))
+    // ->paginate(4),
+    // ]);
 
+
+
+    // laywer profile
+
+    public function profile()
+    {
+
+        $allLawyerPosts = Post::all();
+
+
+        return view('lawyers.lawyer_profile');
     }
-
-
-
+}

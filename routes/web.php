@@ -243,3 +243,6 @@ Route::get('/appointments/confirm/{id}', [AppointmentController::class, 'confirm
 
 
 
+// lawyer profile
+
+Route::get('/lawyers/lawyer_profile', [LawyerController::class, 'profile'])->name('lawyers.profile');
