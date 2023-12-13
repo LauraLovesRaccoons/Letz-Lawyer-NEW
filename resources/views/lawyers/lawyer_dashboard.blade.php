@@ -87,8 +87,9 @@
                 Create your Lawyer profile
             </h2>
         </header>
-
-        <form action="/lawyers" method="post" enctype="multipart/form-data">
+{{-- 
+        <form action="/lawyers" method="post" enctype="multipart/form-data"> --}}
+            <form action="/client/client_dashboard" >
             @csrf
 
             <div class="mb-6">
