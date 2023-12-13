@@ -94,7 +94,7 @@
 
             <div class="mb-6">
                 <label for="company">Company Name / Your Name</label>
-                <input type="text" value="{{ old('company') }}" name="company" />
+                <input type="text" placeholder="Narelle's Lawyer Agency" name="company" />
                 @error('company')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
