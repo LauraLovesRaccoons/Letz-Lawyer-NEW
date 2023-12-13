@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,24 +16,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f0f0f0; /* Background color for the shadow */
-            background-image: linear-gradient(rgba(0,0,9,0.8),rgba(0,0,10,0.8)),url({{ asset('images/Logo_V0.3.png') }}) ;
+            background: linear-gradient(rgba(0, 0, 9, 0.8), rgba(0, 0, 10, 0.8)),
+                url('{{ asset('images/Logo_V0.3.png') }}');
             background-position: center;
             background-size: cover;
             position: relative;
+            font-family: 'Arial', sans-serif;
+            color: #82b7d8;
+            /* Text color for the form */
         }
 
         .logo-container {
-            position: relative;
-            cursor: pointer;
-            text-align: center; /* Center the logo and buttons */
+            text-align: center;
+            transition: box-shadow 0.3s;
         }
 
-        .logo-container{
-            width: 550px; /* Adjust the size of your logo */
+        #logo {
+            width: 200px; /* Adjust the size of your logo */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
             border-radius: 50%; /* Make the image round */
-            transition: box-shadow 0.3s;
         }
 
         .buttons-container {
@@ -51,6 +53,8 @@
             border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-decoration: none; /* Remove underlines from the link */
+            display: inline-block;
         }
 
         .button:hover {
@@ -59,22 +63,22 @@
     </style>
     <title>Splash Screen</title>
 </head>
+
 <body>
     <div class="logo-container">
         {{-- add logo path here --}}
         <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo" id="logo">
-    
+
         <div class="buttons-container" id="buttonsContainer">
             <a href="{{ route('register') }}" class="button">Go to Registration</a>
-
         </div>
     </div>
-    
+
     <script>
         function toggleButtons() {
             var buttonsContainer = document.getElementById('buttonsContainer');
             var logo = document.getElementById('logo');
-    
+
             if (buttonsContainer.style.display === 'none' || buttonsContainer.style.display === '') {
                 buttonsContainer.style.display = 'flex';
                 logo.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.8)';
@@ -84,8 +88,9 @@
             }
         }
     </script>
-   
+
 </body>
+
 </html>
 
 @endsection
