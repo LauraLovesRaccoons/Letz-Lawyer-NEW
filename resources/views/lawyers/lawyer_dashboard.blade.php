@@ -82,8 +82,8 @@
     <div class="container">
         <h1>Welcome to your Lawyer Dashboard, {{ Auth::user()->name }}!</h1>
 
-        <header class="text-center">
-            <h2 class="text-2xl font-bold uppercase mb-1">
+        <header class="text-left" style="margin-bottom: 15px;">
+            <h2 class="text-2xl font-bold uppercase mb-1" style="margin-top: 15px;" >
                 Create your Lawyer profile
             </h2>
         </header>
