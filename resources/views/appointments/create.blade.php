@@ -11,35 +11,30 @@
 
 <!-- sidebar.blade.php -->
 
-<div class="bg-white h-screen w-96 fixed top-0 left-0 flex flex-col items-center p-16 shadow-md" style="display: flex;flex-direction:column;">
+{{-- <div class="bg-white h-screen w-96 fixed top-0 left-0 flex flex-col items-center p-16 shadow-md" style="display: flex;flex-direction:column;"> --}}
     <!-- Avatar Icon (replace with your own) -->
-    <img src="https://thispersondoesnotexist.com/" alt="Avatar" class="w-40 h-40 rounded-full mb-4">
-    <br>
+    {{-- <img src="https://thispersondoesnotexist.com/" alt="Avatar" class="w-40 h-40 rounded-full mb-4">
+    <br> --}}
 
         <!-- Sidebar Links -->
-    <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
-      
-       
-            
-       
-            
-     
-            
-        </div>
-        <div style="display:flex;flex-direction: row ; gap:77px">
+    {{-- <div style="display: flex;flex-direction:column;justify-content:space-between; gap:30px">
+        </div> --}}
+        {{-- settings link --}}
+        {{-- <div style="display:flex;flex-direction: row ; gap:77px">
             <div class="text-center my-4">
                 <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="/appointments/manage">Settings</a>
             </div>
-            
         </div>
-        <br>
-        <form method="POST" action="{{-- route('logout') --}}">
+        <br> --}}
+        {{-- settings link --}}
+        {{-- route('logout') --}}
+        {{-- <form method="POST" action="">
             @csrf
             <button type="submit"  style="padding:11px;color:rgb(231, 66, 66);border-radius:20px;" class="text-gray-800 hover:text-gray-600">
                 Logout
             </button>
-        </form>
-    </div>
+        </form> --}}
+    {{-- </div> --}}
 
     
 </div>
@@ -78,6 +73,7 @@
             <p>08:00-12:00</p>
             <p>13:00-17:00</p>
         </div>
+
     </div>
 <br>
 <br>
@@ -125,7 +121,7 @@
     
                         <tr>
                             <td class="px-4 py-2 text-gray-500 font-semibold">Phone</td>
-                            <td class="px-4 py-2">+352 691 522</td>
+                            <td class="px-4 py-2">+352 691 123 456</td>
                         </tr>
     
                         <tr>
@@ -138,6 +134,17 @@
                 <div class="text-center my-4">
                     <a class="text-base text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="#">View Profile</a>
                 </div>
+
+                
+                {{-- settings link --}}
+                {{-- <div style="display:flex;flex-direction: row ; gap:77px"> --}}
+                    <div class="text-center my-4">
+                        <a class="text-xl text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium" href="/appointments/manage">Settings</a>
+                    </div>
+                {{-- </div> --}}
+                <br>
+                {{-- settings link --}}
+
             </div>
         </div>
     </div>

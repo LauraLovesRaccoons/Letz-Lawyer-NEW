@@ -8,20 +8,21 @@
 <!-- sidebar.blade.php -->
 
         <br>
-        <form method="POST" action="{{-- route('logout') --}}">
+		{{-- route('logout') --}}
+        {{-- <form method="POST" action="">
             @csrf
             <button type="submit"  style="padding:11px;color:rgb(231, 66, 66);border-radius:20px;" class="text-gray-800 hover:text-gray-600">
                 Logout
             </button>
-        </form>
-    </div>
+        </form> --}}
+    {{-- </div>
 
     
-</div>
+</div> --}}
 <div class="bg-white shadow-xl rounded-lg p-8" style="width: 1500px;border-radius:30px;justify-content:center;margin-left:400px;margin-top:50px;position:relative" >
     <div style="display:flex;flex-direction:column;justify-content:space-evenly;gap:30px;margin-left:100px">
         <div style="border-radius:30px;font-size:22px;padding:20px;width:400px;height:100px;display:flex;flex-direction:row;justify-content:space-between"class="bg-white shadow-xl rounded-lg p-8">
-            <img src="/images/calendar.png"  style="width:60px; alt="">
+            <img src="/images/calendar.png"  style="width:60px"; alt="calendar">
             <p style="text-align:right">
                 4
                 <br>
@@ -29,7 +30,7 @@
             </p>
         </div>
         <div class="bg-white shadow-xl rounded-lg p-8" style="border-radius:30px;font-size:22px;padding:20px;width:400px;height:100px;display:flex;flex-direction:row;justify-content:space-between">
-            <img src="/images/confirmation.png" style="width:60px" alt="">
+            <img src="/images/confirmation.png" style="width:60px" alt="confirmation">
             <p style="text-align:right">
                 16 
                 <br>
