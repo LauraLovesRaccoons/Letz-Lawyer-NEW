@@ -10,12 +10,12 @@
         </header>
 
         <form action="{{ route('register') }}" method="post" class="bg-white p-6 rounded shadow-md max-w-md w-full">
+            @csrf
             <div class="mb-6">
                 <label for="is_lawyer" class="block text-lg mb-2">Are you a lawyer?</label>
                 <input type="checkbox" id="is_lawyer" name="is_lawyer" value="1" {{ old('is_lawyer') ? 'checked' : '' }}>
             </div>
 
-            @csrf
 
             <div class="mb-6">
                 <label for="name" class="block text-lg mb-2">Name</label>
