@@ -44,7 +44,7 @@
                     <ul class="list-group">
                         @foreach ($results as $user)
                             <li class="list-group-item">
-                                <h3>{{ $user->name }}</h3>
+                                <h3 class="text-2xl font-bold mb-4">{{ $user->name }}</h3>
                                 <p class="mb-2"><img class="img-fluid" src="{{ asset('images/Logo_V0.3.png') }}" alt="{{ $user->name }}'s picture"></p>
                                 <p>Email: {{ $user->email }}</p>
                                 <a href="/appointments/create" class="btn btn-primary btn-sm">View Profile</a>

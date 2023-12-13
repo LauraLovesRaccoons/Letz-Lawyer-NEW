@@ -104,9 +104,10 @@
     
    
 
-    <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
+    <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-16 mt-24 opacity-90 md:justify-center">
         <p class="ml-2">Copyright &copy; 2023, All Rights reserved - LetzLawyer</p>
-    </footer>
+      </footer>
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ asset('public/dashboard.css') }}">
