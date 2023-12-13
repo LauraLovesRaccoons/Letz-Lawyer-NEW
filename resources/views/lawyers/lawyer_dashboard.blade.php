@@ -230,7 +230,7 @@
 
 
             <div class="mb-6">
-                <button class="btn-laravel"><a href="/lawyers/lawyer_profile">Upload Lawyer Profile</a></button>
+                <a class="btn-laravel"href="/lawyers/lawyer_profile">Upload Lawyer Profile</a>
                 <br>
                 <div>
                     <a href="/common/common_dashboard">See other's posts</a>
