@@ -25,6 +25,9 @@
     </ul>
     {{-- end fake --}}
 
-    
+    <br>
+    {{-- return --}}
+    <div class="mb-6">
+        <a href="/lawyers/lawyer_dashboard" class="text-black ml-4" style="background-color:#007bff; padding: 5px; margin: 2px; border-radius: 10px;"><span style="color:#f8f9fa;">Edit your profile</span></a>
     </div>
 @endsection
