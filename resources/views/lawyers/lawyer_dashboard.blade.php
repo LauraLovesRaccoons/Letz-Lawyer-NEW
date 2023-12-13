@@ -235,7 +235,7 @@
                 <div>
                     <a href="/common/common_dashboard">See other's posts</a>
                 </div>
-                <a href="/" class="text-black ml-4">Back</a>
+                <a href="/" class="text-black ml-4"><span style="color:#f8f9fa;">Back</span></a>
             </div>
         </form>
 
