@@ -150,6 +150,84 @@
             </div>
 
             <!-- Other form fields -->
+            {{-- Location --}}
+            <div class="mb-6">
+                <label for="location" class="inline-block text-lg mb-2">Your Location</label>
+                <input type="text" value="{{ old('location') }}" class="border border-gray-200 rounded p-2 w-full"
+                    name="location" placeholder="Example: 666 Route d'Esch, Belvaux, Luxembourg" />
+                @error('location')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Languages --}}
+            <div class="mb-6">
+                <label for="languages" class="inline-block text-lg mb-2">Languages you speak</label>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="languages" rows="2"
+                    placeholder="Example: Luxembourg, English, German, French, Dutch, Romanian - type in manually.">{{ old('languages') }}</textarea>
+                @error('languages')
+                    <p class="text-red-500 text-xs m-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Contact Email --}}
+            <div class="mb-6">
+                <label for="email" class="inline-block text-lg mb-2">Contact Email</label>
+                <input type="text" value="{{ old('email') }}" class="border border-gray-200 rounded p-2 w-full"
+                    name="email" placeholder="Example: yourbusiness@email.lu" />
+                @error('email')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Contact Phone Number --}}
+            {{-- Make it so it's saved properly so you can click on it in the browser --}}
+            <div class="mb-6">
+                <label for="phone" class="inline-block text-lg mb-2">Contact Phone Number</label>
+                <input type="text" value="{{ old('phone') }}" class="border border-gray-200 rounded p-2 w-full"
+                    name="phone" placeholder="Example: +352 00 00 00" />
+                @error('phone')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Company Logo / Lawyer Photo --}}
+            <div class="mb-6">
+                <label for="logo" class="inline-block text-lg mb-2">
+                    Company Logo / Your Photo
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="logo" />
+                @error('logo')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Description / About Me --}}
+            <div class="mb-6">
+                <label for="description" class="inline-block text-lg mb-2">
+                    About me
+                </label>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="6"
+                    placeholder="I'm Narelle Baker a divorce lawyer with 20 years of experience. I did my college in Melbourne at the University of fine lawyers. I'm well versed in international divorce laws with a focus on Luxembourg. etc.">{{ old('description') }}</textarea>
+                @error('description')
+                    <p class="text-red-500 text-xs m-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Website --}}
+            {{-- this is optional (nullable) --}}
+            <div class="mb-6">
+                <label for="website" class="inline-block text-lg mb-2">
+                    Website/Application URL (Optional)
+                </label>
+                <input type="text" value="{{ old('website') }}" class="border border-gray-200 rounded p-2 w-full"
+                    name="website" nullable />
+                @error('website')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+
 
             <div class="mb-6">
                 <button class="btn-laravel">Upload Lawyer Profile</button>
