@@ -220,7 +220,7 @@
                 <label for="website" class="inline-block text-lg mb-2">
                     Website/Application URL (Optional)
                 </label>
-                <input type="text" value="{{ old('website') }}" class="border border-gray-200 rounded p-2 w-full"
+                <input type="text" placeholder="mywebsite.lu" class="border border-gray-200 rounded p-2 w-full"
                     name="website" nullable />
                 @error('website')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
