@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Client</title>
         <style>
-            body {
+            /* body {
                 margin: 0;
                 padding: 0;
                 display: flex;
@@ -25,14 +25,14 @@
                 position: relative;
                 font-family: 'Arial', sans-serif;
                 color: #82b7d8;
-                /* Text color for the form */
+              
             }
 
             .form-box {
                 width: 90%;
                 max-width: 450px;
                 margin: auto;
-                /* Center the form box horizontally */
+               
                 background: #fff;
                 padding: 50px 60px 70px;
                 text-align: center;
@@ -86,7 +86,7 @@
                 padding: 18px 15px;
                 border: none;
                 border-bottom: 2px solid #82b7d8;
-                /* Line color under the input */
+              
                 outline: 0;
                 background: transparent;
             }
@@ -104,6 +104,8 @@
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
+                margin-top: 20px;
+                text-align: center;
             }
 
             .btn-field button {
@@ -148,8 +150,114 @@
 
             .btn-back:hover {
                 background: #5a8fa8;
-                /* Change color on hover if desired */
-            }
+                
+            } */
+
+            body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 9, 0.8), rgba(0, 0, 10, 0.8)), url(pic/Firefly_mate_i_need_a_logo_for_a_lawyer_appointement_app_in_luxembourg_keep_it_simple_stupid_and_16b\(2\).jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    color: #3e4f73; /* Darker color for text */
+}
+
+.form-box {
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    background: #e4dfd9; /* Lighter color for background */
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #d15560; /* Accent color */
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+form p {
+    text-align: left;
+    font-size: 13px;
+    color: #1d102a; /* Darker color for text */
+}
+
+form p a {
+    text-decoration: none;
+    color: #d15560; /* Accent color */
+}
+
+.input-field {
+    background: #79a9b8; /* Lighter color for input field background */
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 18px 15px;
+    border: none;
+    border-bottom: 2px solid #1d102a; /* Darker color for line under the input */
+    outline: 0;
+    background: transparent;
+}
+
+.btn-field button {
+    flex-basis: 48%;
+    background: #d15560; /* Accent color */
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.btn-back {
+    background: #79a9b8; /* Lighter color for button background */
+    color: #1d102a; /* Darker color for button text */
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.btn-back i {
+    margin-right: 0px;
+}
+
+.btn-back:hover {
+    background: #3e4f73; /* Darker color on hover */
+}
+
+
         </style>
     </head>
 
@@ -157,7 +265,7 @@
 
         <div class="form-box">
 
-            <button class="btn-back" onclick="goBack()"><i class="fas fa-arrow-left-long"></i> Go Back</button>
+            <button class="btn-back" onclick="goBack()"><i class="fas fa-arrow-left-long"></i> </button>
 
             <!-- Sign Up Form -->
             <h1 id="title">Sign Up</h1>
@@ -170,7 +278,7 @@
                 @csrf
                 <div class="input-group">
                     <div class="input-field" id="nameField">
-                        <i class="fa-solid fa-user"></i>
+                        {{-- <i class="fa-solid fa-user"></i> --}}
                         <input type="text" placeholder="Name" name="name" value="{{ old('name') }}">
                         @error('name')
                             <p>{{ $message }}</p>
@@ -178,7 +286,7 @@
                     </div>
 
                     <div class="input-field" id="emailField">
-                        <i class="fa-solid fa-envelope"></i>
+                        {{-- <i class="fa-solid fa-envelope"></i> --}}
                         <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
                         @error('email')
                             <p>{{ $message }}</p>
@@ -186,12 +294,12 @@
                     </div>
 
                     <div class="input-field" id="passwordField">
-                        <i class="fa-solid fa-lock"></i>
+                        {{-- <i class="fa-solid fa-lock"></i> --}}
                         <input type="password" placeholder="Password" name="password">
                     </div>
 
                     <div class="input-field" id="confirmPasswordField">
-                        <i class="fa-solid fa-lock"></i>
+                        {{-- <i class="fa-solid fa-lock"></i> --}}
                         <input type="password" placeholder="Confirm Password" name="password_confirmation"
                             value="{{ old('password_confirmation') }}">
                         @error('password_confirmation')
@@ -219,7 +327,7 @@
                 @csrf
                 <div class="input-group">
                     <div class="input-field" id="signInEmailField">
-                        <i class="fa-solid fa-envelope"></i>
+                        {{-- <i class="fa-solid fa-envelope"></i> --}}
                         <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
                         @error('email')
                             <p>{{ $message }}</p>
@@ -227,7 +335,7 @@
                     </div>
 
                     <div class="input-field" id="signInPasswordField">
-                        <i class="fa-solid fa-lock"></i>
+                        {{-- <i class="fa-solid fa-lock"></i> --}}
                         <input type="password" placeholder="Password" name="password">
                         @error('password')
                             <p>{{ $message }}</p>
@@ -249,14 +357,14 @@
 
     </body>
 
-                <div class="btn-field">
+                {{-- <div class="btn-field">
                     <button type="submit" id="signupBtn" name="action" value="signup">Sign Up</button>
-                </div>
+                </div> --}}
             </div>
         </form>
 
         <!-- Sign In Form -->
-        <h1 id="title">Sign In</h1>
+        {{-- <h1 id="title">Sign In</h1>
         <form action="{{ route('login') }}" method="post">
             @csrf
             <div class="input-group">
@@ -280,7 +388,7 @@
                     <button type="submit" id="signinBtn" name="action" value="signin">Sign In</button>
                 </div>
             </div>
-        </form>
+        </form> --}}
     </div>
 
     <script>
