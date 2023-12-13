@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+<style>
+    body {
+        background-color: #e4dfd9; /* Light gold background color */
+    }
+    </style>
     <div class="flex flex-col items-center justify-center min-h-screen">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">

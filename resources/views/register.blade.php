@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+<style>
+    body {
+        background-color: #e4dfd9; /* Light gold background color */
+    }
+    </style>
     <div class="flex flex-col items-center justify-center min-h-screen">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
@@ -53,7 +58,7 @@
             @error('g-recaptcha')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
-
+            <br>
             <div class="btn-field">
                 <button type="submit" id="signupBtn" name="action" value="signup" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Sign Up</button>
             </div>
