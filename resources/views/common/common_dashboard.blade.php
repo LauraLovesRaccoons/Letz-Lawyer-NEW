@@ -3,7 +3,7 @@
 @section('content')
     <style>
         body {
-            background-color: #faf4e3; /* Light gold background color */
+            background-color: #e4dfd9; /* Light gold background color */
         }
 
         .container {
@@ -16,13 +16,15 @@
         }
 
         h1, h2, h3, h4, h5, p {
-            color: #4a4a4a; /* Dark gray text color */
+            color: #4b4a4a; /* Dark gray text color */
         }
-
+        .container, h1{
+            background-color: #8391b1; 
+        }
         .btn-primary {
-            background-color: #ffd700; /* Light gold color for buttons */
-            border-color: #ffd700; /* Border color for buttons */
-            color: #4a4a4a; /* Dark gray text color for buttons */
+            background-color: #3e4f73; /* Light gold color for buttons */
+            border-color: #3e4f73; /* Border color for buttons */
+            color: #ffffff; /* Dark gray text color for buttons */
         }
     </style>
 
@@ -37,7 +39,8 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                <h2 class="text-primary">Latest Lawyer Posts:</h2>
+                <h2 class="text-primary" style="color: #584833 !important;">Latest Lawyer Posts:</h2>
+
                 <hr class="my-4">
 
                 @if (isset($results))

@@ -3,7 +3,7 @@
 @section('content')
     <style>
         body {
-            background-color: #faf4e3; /* Light gold background color */
+            background-color: #e4dfd9; /* Light gold background color */
         }
 
         .container {
@@ -16,20 +16,24 @@
         }
 
         h1, h2, h3, h4, h5, p {
-            color: #4a4a4a; /* Dark gray text color */
+            color: #4b4a4a; /* Dark gray text color */
+        }
+        .container, h1{
+            background-color: #8391b1; 
         }
 
+
         .btn-primary {
-            background-color: #ffd700; /* Light gold color for buttons */
-            border-color: #ffd700; /* Border color for buttons */
-            color: #4a4a4a; /* Dark gray text color for buttons */
+            background-color: #3e4f73; /* Light gold color for buttons */
+            border-color: #3e4f73; /* Border color for buttons */
+            color: #ffffff; /* Dark gray text color for buttons */
         }
 
         div a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #ffd700; /* Light gold background color for links */
-            color: #4a4a4a; /* Dark gray text color for links */
+            background-color: #3e4f73; /* Light gold background color for links */
+            color: #ffffff; /* Dark gray text color for links */
             text-decoration: none; /* Remove underlines from the link */
             border-radius: 5px; /* Add rounded corners */
             transition: background-color 0.3s ease; /* Smooth transition for background color */
