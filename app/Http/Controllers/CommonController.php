@@ -10,9 +10,18 @@ use App\Http\Controllers\Controller;
 class CommonController extends Controller
 {
 
-    public function showDashboard(){
-        $allLawyerPosts = Post::all();  
+    public function showDashboard(Request $request)
+    {
+        // Check if a search query is present
+        if ($request->has('name')) {
+            $search = $request->get('name');
+            $results = User::where('name', 'like', '%' . $search . '%')->where('is_lawyer', '=', 1)->paginate(5);
 
+            return view('common.common_dashboard', ['results' => $results]);
+        }
+
+        // No search query, display all lawyer posts
+        $allLawyerPosts = Post::all();
         return view('common.common_dashboard', compact('allLawyerPosts'));
     }
     public function clientDashboard()
@@ -22,12 +31,12 @@ class CommonController extends Controller
 }
 
 // search function
-public function search(Request $request)
-{
-    $search = $request->get('name');
-    $results = User::where('name', 'like', '%' . $search . '%')->where('is_lawyer', '=', 1)->paginate(5);
-    return view('common.common_dashboard', ['results' => $results]);
-}
+// public function search(Request $request)
+// {
+//     $search = $request->get('name');
+//     $results = User::where('name', 'like', '%' . $search . '%')->where('is_lawyer', '=', 1)->paginate(5);
+//     return view('common.common_dashboard', ['results' => $results]);
+// }
 
 public function lawyerDashboard()
 {

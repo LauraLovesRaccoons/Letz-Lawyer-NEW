@@ -1,25 +1,58 @@
 @extends('layout')
 
 @section('content')
-    <h1>Welcome to the Client Dashboard, {{ Auth::user()->name }}!</h1>
+    <style>
+        body {
+            background-color: #faf4e3; /* Light gold background color */
+        }
 
+        .container {
+            background-color: #fff; /* White background color for content */
+            border-radius: 10px; /* Add some rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
+        h1, h2, h3, h4, h5, p {
+            color: #4a4a4a; /* Dark gray text color */
+        }
+
+        .btn-primary {
+            background-color: #ffd700; /* Light gold color for buttons */
+            border-color: #ffd700; /* Border color for buttons */
+            color: #4a4a4a; /* Dark gray text color for buttons */
+        }
+
+        div a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffd700; /* Light gold background color for links */
+            color: #4a4a4a; /* Dark gray text color for links */
+            text-decoration: none; /* Remove underlines from the link */
+            border-radius: 5px; /* Add rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+            margin-top: 20px;
+        }
+
+        div a:hover {
+            background-color: #e0bb87; /* Darker gold color on hover */
+        }
+    </style>
+
+    <div class="container">
+        <h1>Welcome to the Client Dashboard, {{ Auth::user()->name }}!</h1>
     </div>
 
-    <div style="padding: 55px; max-width: 450px;"> {{-- design padding and width limit for select specality --}}
-
-
+    <div style="padding: 55px; max-width: 450px;"> {{-- Design padding and width limit for select specialty --}}
         <br>
-        {{-- For now I'm doing a query that just checks for the name in the user's table and checks for is lawyer = true --}}
-        {{-- smth like this - WORKING QUERY --}}
-        {{-- SELECT * FROM users WHERE name = 'Laura' AND is_lawyer = 1; --}}
 
         <form method="POST" action="/search">
             @csrf
             <div>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter lawyer's name"
-                    class="border border-gray-300 rounded-md p-2">
+                <input type="text" id="name" name="name" placeholder="Enter lawyer's name" class="border border-gray-300 rounded-md p-2">
             </div>
             <br>
 
@@ -64,6 +97,7 @@
                     <option value="36">Banking Lawyer</option>
                     <option value="1">Other</option>
                 </select>
+                
                 @error('specialty')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
@@ -71,13 +105,16 @@
 
             <div>
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" placeholder="Enter location"
-                    class="border border-gray-300 rounded-md p-2">
+                <input type="text" id="location" name="location" placeholder="Enter location" class="border border-gray-300 rounded-md p-2">
             </div>
             <br>
 
-            <input type="submit" value="Find your lawyer" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <input type="submit" value="Find your lawyer" class="btn btn-primary btn-sm">
         </form>
+    </div> {{-- End of design padding and width limit for select specialty --}}
+    <br>
 
-    </div> {{-- end of design padding and width limit for select specality --}}
+    <div>
+        <a href="/common/common_dashboard">See lawyers posts</a>
+    </div>
 @endsection
