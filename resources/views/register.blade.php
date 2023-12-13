@@ -16,10 +16,15 @@
 
         <form action="{{ route('register') }}" method="post" class="bg-white p-6 rounded shadow-md max-w-md w-full">
             <div class="mb-6">
-                <label for="is_lawyer" class="block text-lg mb-2">Are you a lawyer?</label>
-                <input type="checkbox" id="is_lawyer" name="is_lawyer" value="1" {{ old('is_lawyer') ? 'checked' : '' }}>
-            </div>
-
+                <label for="is_lawyer" class="block text-lg mb-2 flex items-center">
+                  <span class="ml-10">Are you a lawyer?</span>
+                  <span class="ml-5" style="margin-bottom: -0.5px;">
+                    <input type="checkbox" id="is_lawyer" name="is_lawyer" value="1" {{ old('is_lawyer') ? 'checked' : '' }}>
+                  </span>
+                </label>
+              </div>
+              
+              
             @csrf
 
             <div class="mb-6">
