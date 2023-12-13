@@ -15,6 +15,7 @@
         </header>
 
         <form action="{{ route('register') }}" method="post" class="bg-white p-6 rounded shadow-md max-w-md w-full">
+            @csrf
             <div class="mb-6">
                 <label for="is_lawyer" class="block text-lg mb-2 flex items-center">
                   <span class="ml-10">Are you a lawyer?</span>
@@ -25,7 +26,7 @@
               </div>
               
               
-            @csrf
+
 
             <div class="mb-6">
                 <label for="name" class="block text-lg mb-2">Name</label>

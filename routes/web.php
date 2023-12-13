@@ -10,9 +10,10 @@ use App\Http\Controllers\UserController;
 // this use will be to SplashScreen.blade.php ,  is it correct ?  / Mai :)
 use App\Http\Controllers\YourController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CommonController;
-use App\Http\Controllers\LawyerController;
 
+use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AppointmentController;
@@ -45,6 +46,9 @@ use App\Http\Controllers\SplashScreenController;
 // Splash Screen
 Route::get('/', [SplashScreenController::class, 'firstPage'])->name('SplashScreen');
 
+
+Route::get('/common/common_dashboard', [CommonController::class, 'showDashboard'])->name('common.dashboard');
+
 Route::middleware(['auth', 'role:lawyer'])->group(function () {
     Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard'])->name('lawyers.lawyer_dashboard');
 });
@@ -55,10 +59,12 @@ Route::middleware(['auth', 'role:client'])->group(function () {
 Route::post('/search', [CommonController::class, 'search'])->name('lawyer.search.submit');
 
 // Use a different path for the second common dashboard route
-Route::get('/common/common_dashboard', [CommonController::class, 'showDashboard'])->name('common.dashboard');
 
-Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard']);
+
+
 Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboard']);
+Route::get('/lawyers/lawyer_dashboard', [CommonController::class, 'lawyerDashboard']);
+// Lawyer Dashboard Route
 
 
 // Route::middleware(['auth', 'role:lawyer'])->group(function () {
@@ -72,6 +78,12 @@ Route::get('/client/client_dashboard', [CommonController::class, 'clientDashboar
 
 Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 Route::post('/register', [UserController::class, 'store'])->middleware('guest');
+
+// routes/web.php
+
+Route::get('/client/dashboard', [ClientController::class,'dashboard'])->name('client.client_dashboard');
+Route::get('/lawyers/lawyer_dashboard', [LawyerController::class,'showLawyerDashboard'])->name('lawyers.lawyer_dashboard');
+
 
 // User Login // changed to login controller
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login')->middleware('guest');
