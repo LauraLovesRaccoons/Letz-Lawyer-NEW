@@ -44,9 +44,9 @@
                 <hr class="my-4">
 
                 @if (isset($results))
-                    <ul class="list-group">
+                    <ul class="list-group" style="background-color: #c9a4a4 !important;">
                         @foreach ($results as $user)
-                            <li class="list-group-item">
+                            <li class="list-group-item" style="background-color: rgb(231, 204, 204) !important;">
                                 <h3 class="text-2xl font-bold mb-4">{{ $user->name }}</h3>
                                 <p class="mb-2"><img style="max-width: 251px;" class="img-fluid" src="{{ asset('images/Logo_V0.3.png') }}" alt="{{ $user->name }}'s picture"></p>
                                 <p style="margin: 5px 0;">Email: {{ $user->email }}</p>
