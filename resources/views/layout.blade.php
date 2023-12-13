@@ -53,7 +53,7 @@
             {{-- <img class="w-24 logo" style="border-radius: 50px;" src="{{ asset('images/Logo_V0.3.png') }}" alt="LetzLawyer Logo" /> --}}
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
-
+            
             <li>
                 @auth
                     @if (auth()->user()->is_lawyer)
