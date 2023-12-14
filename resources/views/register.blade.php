@@ -30,7 +30,7 @@
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Register
             </h2>
-            <p class="mb-4">Create an account to get started with Letz Lawyer</p>
+            <p class="mb-4">Create an account to get started with LetzLawyer</p>
         </header>
 
         <form action="{{ route('register') }}" method="post" class="bg-white p-6 rounded shadow-md max-w-md w-full">
