@@ -34,7 +34,7 @@
 
     <style>
        .mb-48{
-        background-color: white
+        background-color: white;
        }
     </style>
 </head>
