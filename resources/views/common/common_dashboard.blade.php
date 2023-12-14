@@ -74,7 +74,7 @@
                 @if (isset($results))
                     <ul class="list-group" style="background-color: #c9a4a4 !important;">
                         @foreach ($results as $user)
-                            <li class="list-group-item" style="background-color: rgb(231, 204, 204) !important;">
+                            <li class="list-group-item" style="background-color: rgb(250, 250, 250) !important;">
                                 <h3 class="text-2xl font-bold mb-4">{{ $user->name }}</h3>
                                 <p class="mb-2"><img style="max-width: 251px;" class="img-fluid"
                                         src="{{ asset('images/Logo_V0.3.png') }}" alt="{{ $user->name }}'s picture"></p>
@@ -105,7 +105,7 @@
                     {{-- fake profiles --}}
                     <ul class="list-group" style="background-color: #c9a4a4 !important;">
                         {{-- 1 --}}
-                        <li class="list-group-item" style="background-color: rgb(255, 255, 255) !important;">
+                        <li class="list-group-item" style="background-color: rgb(250, 250, 250) !important;">
                             <h3 class="text-2xl font-bold mb-4">Henry Masterlawyer</h3>
                             <p class="mb-2"><img style="max-width: 251px;" class="img-fluid"
                                     src="{{ asset('images/Logo_V0.3.png') }}" alt="XYZ's picture"></p>
