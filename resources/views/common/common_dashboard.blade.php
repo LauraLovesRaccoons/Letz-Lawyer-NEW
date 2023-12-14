@@ -3,12 +3,19 @@
 @section('content')
     <style>
         body {
-            background-color: #e4dfd9;
+            background-color: #fdfcfa;
+            /* Light gold background color */
+        }
+        main{
+
+            background-color: #fdfcfa;
             /* Light gold background color */
         }
 
+
+
         .container {
-            background-color: #fff;
+            background-color: #fffefe;
             /* White background color for content */
             border-radius: 10px;
             /* Add some rounded corners */
@@ -18,6 +25,10 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+
+        .container, h1 {
+  background-color: #ffff;
+}
 
         h1,
         h2,
@@ -31,17 +42,18 @@
 
         .container,
         h1 {
-            background-color: #8391b1;
+            background-color: #dcdfe6;
         }
 
         .btn-primary {
-            background-color: #3e4f73;
+            background-color: #d5d7da;
             /* Light gold color for buttons */
-            border-color: #3e4f73;
+            border-color: #d2d5dd;
             /* Border color for buttons */
             color: #ffffff;
             /* Dark gray text color for buttons */
         }
+
     </style>
 
     <div class="container">
@@ -93,7 +105,7 @@
                     {{-- fake profiles --}}
                     <ul class="list-group" style="background-color: #c9a4a4 !important;">
                         {{-- 1 --}}
-                        <li class="list-group-item" style="background-color: rgb(231, 204, 204) !important;">
+                        <li class="list-group-item" style="background-color: rgb(255, 255, 255) !important;">
                             <h3 class="text-2xl font-bold mb-4">Henry Masterlawyer</h3>
                             <p class="mb-2"><img style="max-width: 251px;" class="img-fluid"
                                     src="{{ asset('images/Logo_V0.3.png') }}" alt="XYZ's picture"></p>
@@ -106,7 +118,7 @@
                         </li>
                         {{-- 1 end --}}
                         {{-- 2 --}}
-                        <li class="list-group-item" style="background-color: rgb(231, 204, 204) !important;">
+                        <li class="list-group-item" style="background-color: rgb(255, 255, 255);">
                             <h3 class="text-2xl font-bold mb-4">Anya Petrova</h3>
                             <p class="mb-2"><img style="max-width: 251px;" class="img-fluid"
                                     src="{{ asset('images/Logo_V0.3.png') }}" alt="XYZ's picture"></p>
@@ -125,7 +137,7 @@
                         </li>
                         {{-- 2 end --}}
                         <br>
-                        <li class="list-group-item text-muted" style="background-color: #e6bcbc !important;">End of Results
+                        <li class="list-group-item text-muted" style="background-color: #ffffff !important;">End of Results
                         </li>
                     </ul>
                     {{-- end fake --}}

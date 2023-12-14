@@ -3,9 +3,28 @@
 @section('content')
 <style>
     body {
-        background-color: #e4dfd9; /* Light gold background color */
+        background-color: #fffffe; /* Light gold background color */
     }
+
+    .bg-white {
+    /* Other existing styles */
+
+    /* Add shadow */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2), 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+            background-color: #ffffff; /* White background color for content */
+            border-radius: 10px; /* Add some rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            padding: 0px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
     </style>
+
+<div class="container">
     <div class="flex flex-col items-center justify-center min-h-screen">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
@@ -76,5 +95,6 @@
                 <a href="{{ route('login') }}" class="text-blue-500">Login</a>
             </p>
         </div>
+    </div>
     </div>
 @endsection

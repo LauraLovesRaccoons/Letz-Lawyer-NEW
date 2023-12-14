@@ -30,12 +30,11 @@
             text-align: center;
             transition: box-shadow 0.3s;
         }
-
         #logo {
-            width: 200px; /* Adjust the size of your logo */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-            border-radius: 50%; /* Make the image round */
-        }
+        width: 400px; /* Increase the size of your logo */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        border-radius: 50%; /* Make the image round */
+    }
 
         .buttons-container {
             display: flex;
@@ -70,7 +69,7 @@
         <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo" id="logo">
 
         <div class="buttons-container" id="buttonsContainer">
-            <a href="{{ route('register') }}" class="button">Go to Registration</a>
+            <a href="{{ route('register') }}" class="button"> Welcome to Letz Lawer </a>
         </div>
     </div>
 

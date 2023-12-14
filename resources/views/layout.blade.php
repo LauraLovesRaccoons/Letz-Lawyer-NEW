@@ -31,6 +31,12 @@
         };
     </script>
     <title>LetzLawyer | Search and Book Lawyer appointments in Luxembourg</title>
+
+    <style>
+       .mb-48{
+        background-color: white
+       }
+    </style>
 </head>
 
 <!-- NAVBAR -->
