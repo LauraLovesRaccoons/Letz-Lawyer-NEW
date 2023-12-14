@@ -62,7 +62,7 @@
             background-color: #c6a300; /* Darker gold color on hover */
         }
 
-        a {
+        .aSTYLE {
             display: inline-block;
             padding: 10px 20px;
             background-color: #007bff; /* Blue background color for links */
@@ -73,7 +73,7 @@
             margin-top: 20px;
         }
 
-        a:hover {
+        .aSTYLE:hover {
             background-color: #0056b3; /* Darker blue color on hover */
         }
 
@@ -233,7 +233,7 @@
                 <a class="btn-laravel"href="/lawyers/lawyer_profile">Upload Lawyer Profile</a>
                 <br>
                 <div>
-                    <a href="/common/common_dashboard">See other's posts</a>
+                    <a class="aSTYLE" href="/common/common_dashboard">See other's posts</a>
                 </div>
                 <a href="/" class="text-black ml-4"><span style="color:#f8f9fa;">Back</span></a>
             </div>
