@@ -20,6 +20,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\SplashScreenController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -105,11 +106,19 @@ Route::get('/appointments/{id}',[AppointmentController::class, 'show'])
 
 //show create form
 //Added middleware to prevent access to create form if not logged in
-Route::get('/appointments/create', [ AppointmentController::class, 'create']);
-Route::get('/appointments/confirm', [ AppointmentController::class, 'confirm']);
+Route::get('/appointments/create', [ AppointmentController::class, 'createAppointment'])->where('id', '[0-9]+');
+//Route::get('/appointments/confirm', [ AppointmentController::class, 'appointments.confirm']);
+Route::get('/appointments/confirm', [AppointmentController::class, 'sendConfirmationEmails']);
 
+Route::get('/appointments/manage', [AppointmentController::class, 'manage']);
+Route::get('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
+//Route::get('/appointments/confirm/{id}', 'AppointmentController@confirm')->name('appointments.confirm');
+
+//Route::get('/appointments/confirm/{id}', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
 
 //Add Appointment to database
+
+//Route::get('/appointments/create', [AppointmentController::class, 'createAppointment']);
 Route::post('/appointments', [AppointmentController::class, 'store'])->middleware('auth');
 
 //Show edit form
@@ -127,7 +136,7 @@ Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])
     ->where('id', '[0-9]+')
     ->middleware('auth');
 
-Route::get('/appointments/manage', [AppointmentController::class, 'manage']);
+
 
 //*Small fix. This route is used to catch any external links and redirect to them without getting stuck in the app.
 Route::get('/external-link', function(){
@@ -154,11 +163,12 @@ Route::get('/lawyers/create', [LandingController::class, 'showLawyer']);
 Route::get('/lawyers/lawyer_dashboard', [LawyerController::class, 'showLawyerDashboard'])->name('lawyer.dashboard');
 
 
-Route::get('/appointments/create', [AppointmentController::class, 'createForm']);
 // Submit appointment
-Route::post('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
+//Route::post('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');// Example route definition in web.php or routes.php
+//Route::get('/appointments/create', 'AppointmentController@createForm')->name('appointments.createForm');
+
 // Show confirmation page
-Route::get('/appointments/confirm/{id}', [AppointmentController::class, 'confirm'])->name('appointments.confirm');
+
 //*Using the User controller now
 
 //Show register form

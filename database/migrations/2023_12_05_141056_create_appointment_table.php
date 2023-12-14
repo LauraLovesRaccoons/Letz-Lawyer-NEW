@@ -10,8 +10,8 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->dateTime('start_datetime');
-            $table->dateTime('end_datetime');
+            $table->timestamp('start_datetime')->nullable();
+            $table->dateTime('end_datetime')->nullable();
             $table->string('google_calendar_event_id')->nullable();
             $table->timestamps();
         });

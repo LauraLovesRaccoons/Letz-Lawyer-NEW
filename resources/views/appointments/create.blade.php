@@ -7,6 +7,22 @@
     {{---------------------------------------------------}}
     <br>
     <br>
+    <!-- Add this to your Blade file within the <head> section or include it in your stylesheet -->
+<style>
+    .alert {
+        padding: 1em;
+        margin: 1em 0;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+</style>
+
     
 
 <!-- sidebar.blade.php -->
@@ -149,9 +165,10 @@
         </div>
     </div>
     
-
+   
+  
     
-    <form action="{{ route('appointments.create') }}" method="post" enctype="multipart/form-data" class="bg-white shadow-xl rounded-lg py-3" style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
+    <form id="appointmentsForm" action="{{ route('appointments.create') }}" method="GET" enctype="multipart/form-data" class="bg-white shadow-xl rounded-lg py-3" style="width:600px;padding:60px;border-radius:50px;height:700px;display:flex;flex-direction:column;justify-content:space-evenly;align-item:center;">
         @csrf
         <div class="relative z-0 w-full mb-5 group">
             <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-base text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -198,23 +215,11 @@
                 </span>
             </button>
         </div>
+
     </form>
+   
 </div>
 <br>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        flatpickr("#datePicker", {
-            // Additional options if needed
-
-            
-            // enableTime: true,
-            dateFormat: "j F , Y",
-         
-            // Open the calendar when the page loads
-            open: true,
-        });
-    });
-</script>
-
+  
 
 @endsection

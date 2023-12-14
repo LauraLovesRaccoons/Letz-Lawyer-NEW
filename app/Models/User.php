@@ -48,7 +48,7 @@ class User extends Authenticatable
 }
     public function appointmentsAsClient()
     {
-        return $this->hasMany(Appointment::class, 'client_user_id', 'id');
+        return $this->hasMany(Appointment::class, 'user_id', 'id');
     }
 
     public function appointmentsAsLawyer()

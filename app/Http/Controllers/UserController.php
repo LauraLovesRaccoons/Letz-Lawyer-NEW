@@ -137,6 +137,11 @@ class UserController extends Controller
         return view('user.details', compact('user', 'appointmentsAsClient', 'appointmentsAsLawyer', 'posts', 'categories'));
     }
 
+    public function isLawyer($user)
+{
+    return $user->is_lawyer;
+}
+
     
     
 
