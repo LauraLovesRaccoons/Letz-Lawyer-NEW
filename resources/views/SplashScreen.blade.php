@@ -69,7 +69,7 @@
         <img src="{{ asset('images/Logo_V0.3.png') }}" alt="Letz Lawyer Logo" id="logo">
 
         <div class="buttons-container" id="buttonsContainer">
-            <a href="{{ route('register') }}" class="button"> Welcome to Letz Lawer </a>
+            <a href="{{ route('register') }}" class="button"> Welcome to LetzLawyer </a>
         </div>
     </div>
 
