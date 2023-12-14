@@ -148,10 +148,10 @@
             <div class="col-md-4">
                 @if (auth()->check())
                     @if (auth()->user()->is_lawyer == 1)
-                        <a href="/lawyers/lawyer_dashboard" class="btn btn-primary btn-lg btn-block mt-4">Go to Lawyer
+                        <a href="/lawyers/lawyer_dashboard" class="btn btn-primary btn-lg btn-block mt-4" style="background-color: #1aade4 !important; ">Go to Lawyer
                             Dashboard</a>
                     @else
-                        <a href="/client/client_dashboard" class="btn btn-primary btn-lg btn-block mt-4">Go to Client
+                        <a href="/client/client_dashboard" class="btn btn-primary btn-lg btn-block mt-4"style="background-color: #1aade4 !important; ">Go to Client
                             Dashboard</a>
                     @endif
                 @endif
