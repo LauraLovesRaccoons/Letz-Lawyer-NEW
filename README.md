@@ -17,7 +17,7 @@ php artisan serve
 ---
 
 be sure to adjust the .env file in the root for Windows (with XAMPP) - 
-the compose.yaml should also probably adjusted in that case
+the compose.yaml should also probably be adjusted in that case
 
 see comments for optimal settings
 
