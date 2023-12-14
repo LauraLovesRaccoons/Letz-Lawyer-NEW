@@ -141,7 +141,7 @@
                         </li>
                     </ul>
                     {{-- end fake --}}
-                    <p class="text-muted mt-4">End of Posts</p>
+                    {{-- <p class="text-muted mt-4">End of Posts</p> --}}
                 @endif
             </div>
 
