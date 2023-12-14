@@ -87,14 +87,15 @@
             <div class="btn-field">
                 <button type="submit" id="signupBtn" name="action" value="signup" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Sign Up</button>
             </div>
+            <div class="mt-8">
+                <span>
+                    Already have an account?
+                    <a href="{{ route('login') }}" class="text-blue-500">Login</a>
+                </span>
+            </div>
         </form>
 
-        <div class="mt-8">
-            <p>
-                Already have an account?
-                <a href="{{ route('login') }}" class="text-blue-500">Login</a>
-            </p>
-        </div>
+
     </div>
     </div>
 @endsection
