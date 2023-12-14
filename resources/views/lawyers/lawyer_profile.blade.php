@@ -12,11 +12,7 @@
             <p style="margin: 5px 0;">Specialty: Family Law</p>
             <p style="margin: 5px 0;">Email: henry@email.com</p>
             <p style="margin: 5px 0;">Phone: +352 123 456</p>
-            <p style="margin: 5px 0;">Henry is a passionate and experienced lawyer with a
-                strong commitment to justice and client satisfaction. She has a proven track record of
-                success in a variety of legal matters, including family law, personal injury, and criminal
-                defense. Anya is known for her compassionate approach to her clients, her strategic
-                thinking, and her ability to achieve positive outcomes in even the most challenging cases.
+            <p style="margin: 5px 0;">Henry is a resolute and seasoned divorce lawyer with an unwavering commitment to navigating the intricacies of divorce with empathy and decisiveness. He possesses a proven track record of success in guiding clients through the complex process of divorce, ensuring that their legal rights and interests are safeguarded. Henry's dedication to professionalism, integrity, and client advocacy has earned him a reputation as a trusted advisor and formidable advocate in the legal arena.
             </p>
             <br>
         </li>
